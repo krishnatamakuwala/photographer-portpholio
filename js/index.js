@@ -158,7 +158,7 @@ new Swiper('#projects .swiper-container', {
            $('a').hover(cursorhover,cursor);
            $('.control').hover(cursorhover,cursor);
            $('.hover').hover(cursorhover,cursor);
-           $('.project-link').hover(linkhover,cursor)
+          //  $('.project-link').hover(linkhover,cursor)
            
         })
   
@@ -227,46 +227,46 @@ new Swiper('#projects .swiper-container', {
       gsap.to('#breaker',{display:'block'})
       gsap.to('#breaker',0,{display:'none',delay:1.7});
     })
-    $('.marine-project-link').on('click',function(){
-      gsap.to('#home',.5,{scale:.9});
-      gsap.to('#home',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      gsap.to('#home',0,{display:'none',delay:.7});
-      gsap.to('.marine-project',0,{display:'block',delay:.7})
-      gsap.to('.marine-project',.5,{scale:1,delay:1.1})
-      gsap.to('.project-name',.5,{opacity:0,delay:2.5})
-      gsap.to('#breaker',{display:'block'})
-      gsap.to('#breaker',0,{display:'none',delay:1.7});
-    })
-    $('.forest-project-link').on('click',function(){
-      gsap.to('#home',.5,{scale:.9});
-      gsap.to('#home',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      gsap.to('#home',0,{display:'none',delay:.7});
-      gsap.to('.forest-project',0,{display:'block',delay:.7})
-      gsap.to('.forest-project',.5,{scale:1,delay:1.1})
-      gsap.to('.project-name',.5,{opacity:0,delay:2.5})
-      gsap.to('#breaker',{display:'block'})
-      gsap.to('#breaker',0,{display:'none',delay:1.7});
-    })
-    $('.wildlife-project-link').on('click',function(){
-      gsap.to('#home',.5,{scale:.9});
-      gsap.to('#home',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      gsap.to('#home',0,{display:'none',delay:.7});
-      gsap.to('.wildlife-project',0,{display:'block',delay:.7})
-      gsap.to('.wildlife-project',.5,{scale:1,delay:1.1})
-      gsap.to('.project-name',.5,{opacity:0,delay:2.5})
-      gsap.to('#breaker',{display:'block'})
-      gsap.to('#breaker',0,{display:'none',delay:1.7});
-    })
-    $('.city-project-link').on('click',function(){
-      gsap.to('#home',.5,{scale:.9});
-      gsap.to('#home',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      gsap.to('#home',0,{display:'none',delay:.7});
-      gsap.to('.city-project',0,{display:'block',delay:.7})
-      gsap.to('.city-project',.5,{scale:1,delay:1.1})
-      gsap.to('.project-name',.5,{opacity:0,delay:2.5})
-      gsap.to('#breaker',{display:'block'})
-      gsap.to('#breaker',0,{display:'none',delay:1.7});
-    })
+    // $('.marine-project-link').on('click',function(){
+    //   gsap.to('#home',.5,{scale:.9});
+    //   gsap.to('#home',0,{width:'100%',height:'100vh',overflow:'hidden'});
+    //   gsap.to('#home',0,{display:'none',delay:.7});
+    //   gsap.to('.marine-project',0,{display:'block',delay:.7})
+    //   gsap.to('.marine-project',.5,{scale:1,delay:1.1})
+    //   gsap.to('.project-name',.5,{opacity:0,delay:2.5})
+    //   gsap.to('#breaker',{display:'block'})
+    //   gsap.to('#breaker',0,{display:'none',delay:1.7});
+    // })
+    // $('.forest-project-link').on('click',function(){
+    //   gsap.to('#home',.5,{scale:.9});
+    //   gsap.to('#home',0,{width:'100%',height:'100vh',overflow:'hidden'});
+    //   gsap.to('#home',0,{display:'none',delay:.7});
+    //   gsap.to('.forest-project',0,{display:'block',delay:.7})
+    //   gsap.to('.forest-project',.5,{scale:1,delay:1.1})
+    //   gsap.to('.project-name',.5,{opacity:0,delay:2.5})
+    //   gsap.to('#breaker',{display:'block'})
+    //   gsap.to('#breaker',0,{display:'none',delay:1.7});
+    // })
+    // $('.wildlife-project-link').on('click',function(){
+    //   gsap.to('#home',.5,{scale:.9});
+    //   gsap.to('#home',0,{width:'100%',height:'100vh',overflow:'hidden'});
+    //   gsap.to('#home',0,{display:'none',delay:.7});
+    //   gsap.to('.wildlife-project',0,{display:'block',delay:.7})
+    //   gsap.to('.wildlife-project',.5,{scale:1,delay:1.1})
+    //   gsap.to('.project-name',.5,{opacity:0,delay:2.5})
+    //   gsap.to('#breaker',{display:'block'})
+    //   gsap.to('#breaker',0,{display:'none',delay:1.7});
+    // })
+    // $('.city-project-link').on('click',function(){
+    //   gsap.to('#home',.5,{scale:.9});
+    //   gsap.to('#home',0,{width:'100%',height:'100vh',overflow:'hidden'});
+    //   gsap.to('#home',0,{display:'none',delay:.7});
+    //   gsap.to('.city-project',0,{display:'block',delay:.7})
+    //   gsap.to('.city-project',.5,{scale:1,delay:1.1})
+    //   gsap.to('.project-name',.5,{opacity:0,delay:2.5})
+    //   gsap.to('#breaker',{display:'block'})
+    //   gsap.to('#breaker',0,{display:'none',delay:1.7});
+    // })
      $('.about-close').on('click',function(){
       gsap.to('#about',.5,{scale:.9});
       gsap.to('#about',0,{width:'100%',height:'100vh',overflow:'hidden'});
@@ -286,46 +286,46 @@ new Swiper('#projects .swiper-container', {
       gsap.to('#breaker',{display:'block'})
       gsap.to('#breaker',0,{display:'none',delay:1.7});
     })
-    $('.marine-close').on('click',function(){
-      gsap.to('.marine-project',.5,{scale:.9});
-      gsap.to('.marine-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      gsap.to('.marine-project',0,{display:'none',delay:.7});
-      gsap.to('#home',0,{display:'block',delay:.7})
-      gsap.to('#home',.5,{scale:1,delay:1.1})
-      gsap.to('.project-name',.5,{opacity:1,delay:1})
-      gsap.to('#breaker',{display:'block'})
-      gsap.to('#breaker',0,{display:'none',delay:1.7});
-    })
-    $('.forest-close').on('click',function(){
-      gsap.to('.forest-project',.5,{scale:.9});
-      gsap.to('.forest-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      gsap.to('.forest-project',0,{display:'none',delay:.7});
-      gsap.to('#home',0,{display:'block',delay:.7})
-      gsap.to('#home',.5,{scale:1,delay:1.1})
-      gsap.to('.project-name',.5,{opacity:1,delay:1})
-      gsap.to('#breaker',{display:'block'})
-      gsap.to('#breaker',0,{display:'none',delay:1.7});
-    })
-    $('.wildlife-close').on('click',function(){
-      gsap.to('.wildlife-project',.5,{scale:.9});
-      gsap.to('.wildlife-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      gsap.to('.wildlife-project',0,{display:'none',delay:.7});
-      gsap.to('#home',0,{display:'block',delay:.7})
-      gsap.to('#home',.5,{scale:1,delay:1.1})
-      gsap.to('.project-name',.5,{opacity:1,delay:1})
-      gsap.to('#breaker',{display:'block'})
-      gsap.to('#breaker',0,{display:'none',delay:1.7});
-    })
-    $('.city-close').on('click',function(){
-      gsap.to('.city-project',.5,{scale:.9});
-      gsap.to('.city-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      gsap.to('.city-project',0,{display:'none',delay:.7});
-      gsap.to('#home',0,{display:'block',delay:.7})
-      gsap.to('#home',.5,{scale:1,delay:1.1})
-      gsap.to('.project-name',.5,{opacity:1,delay:1})
-      gsap.to('#breaker',{display:'block'})
-      gsap.to('#breaker',0,{display:'none',delay:1.7});
-    })
+    // $('.marine-close').on('click',function(){
+    //   gsap.to('.marine-project',.5,{scale:.9});
+    //   gsap.to('.marine-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
+    //   gsap.to('.marine-project',0,{display:'none',delay:.7});
+    //   gsap.to('#home',0,{display:'block',delay:.7})
+    //   gsap.to('#home',.5,{scale:1,delay:1.1})
+    //   gsap.to('.project-name',.5,{opacity:1,delay:1})
+    //   gsap.to('#breaker',{display:'block'})
+    //   gsap.to('#breaker',0,{display:'none',delay:1.7});
+    // })
+    // $('.forest-close').on('click',function(){
+    //   gsap.to('.forest-project',.5,{scale:.9});
+    //   gsap.to('.forest-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
+    //   gsap.to('.forest-project',0,{display:'none',delay:.7});
+    //   gsap.to('#home',0,{display:'block',delay:.7})
+    //   gsap.to('#home',.5,{scale:1,delay:1.1})
+    //   gsap.to('.project-name',.5,{opacity:1,delay:1})
+    //   gsap.to('#breaker',{display:'block'})
+    //   gsap.to('#breaker',0,{display:'none',delay:1.7});
+    // })
+    // $('.wildlife-close').on('click',function(){
+    //   gsap.to('.wildlife-project',.5,{scale:.9});
+    //   gsap.to('.wildlife-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
+    //   gsap.to('.wildlife-project',0,{display:'none',delay:.7});
+    //   gsap.to('#home',0,{display:'block',delay:.7})
+    //   gsap.to('#home',.5,{scale:1,delay:1.1})
+    //   gsap.to('.project-name',.5,{opacity:1,delay:1})
+    //   gsap.to('#breaker',{display:'block'})
+    //   gsap.to('#breaker',0,{display:'none',delay:1.7});
+    // })
+    // $('.city-close').on('click',function(){
+    //   gsap.to('.city-project',.5,{scale:.9});
+    //   gsap.to('.city-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
+    //   gsap.to('.city-project',0,{display:'none',delay:.7});
+    //   gsap.to('#home',0,{display:'block',delay:.7})
+    //   gsap.to('#home',.5,{scale:1,delay:1.1})
+    //   gsap.to('.project-name',.5,{opacity:1,delay:1})
+    //   gsap.to('#breaker',{display:'block'})
+    //   gsap.to('#breaker',0,{display:'none',delay:1.7});
+    // })
    })
   })
 
@@ -335,12 +335,14 @@ new Swiper('#projects .swiper-container', {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+  if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+    console.log("scroll bottom");
     document.getElementsByClassName("navigation")[0].classList.add("scroll");
     document.getElementsByClassName("logo")[0].classList.remove("center");
     document.getElementsByClassName("navigation-links")[0].classList.remove("hide");
     // document.getElementById("logo").style.fontSize = "25px";
   } else {
+    console.log("scroll top");
     document.getElementsByClassName("navigation")[0].classList.remove("scroll");
     document.getElementsByClassName("logo")[0].classList.add("center");
     document.getElementsByClassName("navigation-links")[0].classList.add("hide");
