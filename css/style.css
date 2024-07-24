@@ -160,7 +160,7 @@ html {
 .navigation-links {
   float: right;
   padding: 10px;
-  padding-right: 40px;
+  /* padding-right: 40px; */
 }
 a {
   color: inherit;
@@ -568,7 +568,13 @@ ul {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: bold;
+
+  font-family: "Libre Bodoni", serif;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-radius: 4px;
+
   font-size: 30px;
   color: rgb(245, 245, 245);
 }
