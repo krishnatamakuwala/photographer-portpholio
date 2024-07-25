@@ -359,46 +359,6 @@ $(window).on("load", function () {
         gsap.to("#breaker", { display: "block" });
         gsap.to("#breaker", 0, { display: "none", delay: 1.7 });
       });
-      // $('.marine-close').on('click',function(){
-      //   gsap.to('.marine-project',.5,{scale:.9});
-      //   gsap.to('.marine-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      //   gsap.to('.marine-project',0,{display:'none',delay:.7});
-      //   gsap.to('#home',0,{display:'block',delay:.7})
-      //   gsap.to('#home',.5,{scale:1,delay:1.1})
-      //   gsap.to('.project-name',.5,{opacity:1,delay:1})
-      //   gsap.to('#breaker',{display:'block'})
-      //   gsap.to('#breaker',0,{display:'none',delay:1.7});
-      // })
-      // $('.forest-close').on('click',function(){
-      //   gsap.to('.forest-project',.5,{scale:.9});
-      //   gsap.to('.forest-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      //   gsap.to('.forest-project',0,{display:'none',delay:.7});
-      //   gsap.to('#home',0,{display:'block',delay:.7})
-      //   gsap.to('#home',.5,{scale:1,delay:1.1})
-      //   gsap.to('.project-name',.5,{opacity:1,delay:1})
-      //   gsap.to('#breaker',{display:'block'})
-      //   gsap.to('#breaker',0,{display:'none',delay:1.7});
-      // })
-      // $('.wildlife-close').on('click',function(){
-      //   gsap.to('.wildlife-project',.5,{scale:.9});
-      //   gsap.to('.wildlife-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      //   gsap.to('.wildlife-project',0,{display:'none',delay:.7});
-      //   gsap.to('#home',0,{display:'block',delay:.7})
-      //   gsap.to('#home',.5,{scale:1,delay:1.1})
-      //   gsap.to('.project-name',.5,{opacity:1,delay:1})
-      //   gsap.to('#breaker',{display:'block'})
-      //   gsap.to('#breaker',0,{display:'none',delay:1.7});
-      // })
-      // $('.city-close').on('click',function(){
-      //   gsap.to('.city-project',.5,{scale:.9});
-      //   gsap.to('.city-project',0,{width:'100%',height:'100vh',overflow:'hidden'});
-      //   gsap.to('.city-project',0,{display:'none',delay:.7});
-      //   gsap.to('#home',0,{display:'block',delay:.7})
-      //   gsap.to('#home',.5,{scale:1,delay:1.1})
-      //   gsap.to('.project-name',.5,{opacity:1,delay:1})
-      //   gsap.to('#breaker',{display:'block'})
-      //   gsap.to('#breaker',0,{display:'none',delay:1.7});
-      // })
     });
   });
 });
