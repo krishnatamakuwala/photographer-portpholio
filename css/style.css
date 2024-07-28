@@ -63,6 +63,62 @@ html {
   /* flex-direction: row; */
 }
 
+/* -------------------------- */
+
+section {
+  position: relative;
+  min-height: 100vh;
+}
+
+section.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(120, 166, 252);
+/*   opacity: 0.5; */
+}
+section.category.one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(120, 252, 160);
+/*   opacity: 0.5; */
+}
+section.category.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(232, 252, 120);
+/*   opacity: 0.5; */
+}
+section.category.three {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(252, 120, 230);
+/*   opacity: 0.5; */
+}
+section.category.four {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(155, 120, 252);
+/*   opacity: 0.5; */
+}
+
+.overlay-img {
+  /* height: 50%;
+  width: 50%; */
+  object-fit: cover;
+  transform-origin: left;
+}
+
+.container-fluid {
+  position: fixed;
+}
+
+/* -------------------------- */
+
 .prev-ctrl,
 .next-ctrl {
   height: auto;

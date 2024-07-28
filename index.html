@@ -21,8 +21,11 @@
       integrity="sha256-DBYdrj7BxKM3slMeqBVWX2otx7x4eqoHRJCsSDJ0Nxw="
       crossorigin="anonymous"
     />
+
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   </head>
 
   <body>
@@ -77,75 +80,77 @@
           </div>
         </div>
 
-        <div class="slider">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12 p-0">
-                <div class="swiper-container parallax-slider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="img-container one">
-                        <!-- <div class="slide-text opacity">
-                                <a href="#0" class="project-link marine-project-link">MARINE 
-                                  <div class="view-project">CLICK TO VIEW PROJECT</div>
-                               </a>
-                              </div> -->
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="img-container two">
-                        <!-- <div class="slide-text opacity">
-                                <a href="#0" class="project-link forest-project-link">FOREST
-                                  <div class="view-project">CLICK TO VIEW PROJECT</div>
+        <section class="one">
+          <div class="slider">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12 p-0">
+                  <div class="swiper-container parallax-slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="img-container one">
+                          <!-- <div class="slide-text opacity">
+                                  <a href="#0" class="project-link marine-project-link">MARINE 
+                                    <div class="view-project">CLICK TO VIEW PROJECT</div>
                                 </a>
-                              </div> -->
+                                </div> -->
+                        </div>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="img-container three">
-                        <!-- <div class="slide-text opacity">
-                                <a href="#0" class="project-link wildlife-project-link">wildlife
-                                  <div class="view-project">CLICK TO VIEW PROJECT</div>
+                      <div class="swiper-slide">
+                        <div class="img-container two">
+                          <!-- <div class="slide-text opacity">
+                                  <a href="#0" class="project-link forest-project-link">FOREST
+                                    <div class="view-project">CLICK TO VIEW PROJECT</div>
+                                  </a>
+                                </div> -->
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="img-container three">
+                          <!-- <div class="slide-text opacity">
+                                  <a href="#0" class="project-link wildlife-project-link">wildlife
+                                    <div class="view-project">CLICK TO VIEW PROJECT</div>
 
-                                </a>
-                              </div> -->
+                                  </a>
+                                </div> -->
+                        </div>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="img-container four">
-                        <!-- <div class="slide-text opacity">
-                                <a href="#0" class="project-link city-project-link">CITY
-                                  <div class="view-project">CLICK TO VIEW PROJECT</div>
+                      <div class="swiper-slide">
+                        <div class="img-container four">
+                          <!-- <div class="slide-text opacity">
+                                  <a href="#0" class="project-link city-project-link">CITY
+                                    <div class="view-project">CLICK TO VIEW PROJECT</div>
 
-                                </a>
-                              </div> -->
+                                  </a>
+                                </div> -->
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <!-- slider controls -->
-                  <div class="slider-controls fade-up-two">
-                    <div class="control left">
-                      <div class="swiper-nav-ctrl prev-ctrl">
-                        <img
-                          src="images/prev.png"
-                          alt="prev"
-                          class="slider-control-image"
-                        />
+                    <!-- slider controls -->
+                    <div class="slider-controls fade-up-two">
+                      <div class="control left">
+                        <div class="swiper-nav-ctrl prev-ctrl">
+                          <img
+                            src="images/prev.png"
+                            alt="prev"
+                            class="slider-control-image"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <!-- <div class="swiper-pagination-container">
-                            <div class="control">
-                              <div class="swiper-pagination"></div>
-                            </div>
-                          </div> -->
-                    <div class="control right">
-                      <div class="swiper-nav-ctrl next-ctrl">
-                        <img
-                          src="images/next.png"
-                          alt="next"
-                          class="slider-control-image"
-                        />
+                      <!-- <div class="swiper-pagination-container">
+                              <div class="control">
+                                <div class="swiper-pagination"></div>
+                              </div>
+                            </div> -->
+                      <div class="control right">
+                        <div class="swiper-nav-ctrl next-ctrl">
+                          <img
+                            src="images/next.png"
+                            alt="next"
+                            class="slider-control-image"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -153,12 +158,32 @@
               </div>
             </div>
           </div>
-        </div>
         <!-- <div class="scroll-icon fade-up"> -->
         <!-- <i class="gg-mouse"></i> -->
         <!-- </div> -->
 
-        <div style="height: 100%; background-color: white;"></div>
+      </section>
+      <div class="categories">
+        <section class="two">
+          <h1>Description</h1>
+        </section>
+        <section class="category one">
+          <h1>Category 1</h1>
+          <img id="img1" class="overlay-img" src="https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w" alt="" srcset="">
+        </section>
+        <section class="category two">
+          <h1>Category 2</h1>
+          <img id="img2" class="overlay-img" src="https://images.unsplash.com/photo-1505201372024-aedc618d47c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w" alt="" srcset="">
+        </section>
+        <section class="category three">
+          <h1>Category 3</h1>
+          <img id="img3" class="overlay-img" src="https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w" alt="" srcset="">
+        </section>
+        <section class="category four">
+          <h1>Category 4</h1>
+          <img id="img4" class="overlay-img" src="https://images.unsplash.com/photo-1505201372024-aedc618d47c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w" alt="" srcset="">
+        </section>
+      </div>
 
         <!-- <div class="social-media-links">
                 <ul>
