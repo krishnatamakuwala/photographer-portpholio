@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Wink - Photography portfolio template</title>
+    <title>Anil Chauhan Photography</title>
     <!--favicon-img-->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
     <!--favicon-img-->
 
     <link
@@ -26,7 +26,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/GSDevTools3.min.js"></script>
   </head>
 
   <body>
@@ -36,27 +35,18 @@
       </div>
       <div id="breaker"></div>
 
-      <!-- <div class="cursor scale"></div> -->
-      <!-- <div class="cursor-two  scale"></div> -->
-      <!-- HOME -->
       <div id="home">
         <div class="navigation fade-down">
           <div class="logo home-link">
-            <a href="#">Anil Chauhan Photography</a>
+            <a href="/">Anil Chauhan Photography</a>
           </div>
 
           <div class="navigation-links hide">
             <ul>
-              <li class="links about-link">
-                <a href="#0">Gallery</a>
-              </li>
-              <li class="links about-link">
-                <a href="#0">Testimonial</a>
-              </li>
-              <li class="links about-link"><a href="#0">About</a></li>
-              <li class="links about-link">
-                <a href="#0">Contact</a>
-              </li>
+              <li class="links" onclick="scrollToParticularElement('.category.one', false)">Gallery</li>
+              <li class="links" onclick="scrollToParticularElement('.category.one', false)">Testimonial</li>
+              <li class="links" onclick="scrollToParticularElement('.category.one', false)">About</li>
+              <li class="links" onclick="scrollToParticularElement('.category.one', false)">Contact</li>
             </ul>
           </div>
 
@@ -72,10 +62,10 @@
 
             <nav>    
               <ul>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Testimonial</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li onclick="scrollToParticularElement('.category.one', true)">Gallery</li>
+                <li onclick="scrollToParticularElement('.category.one', true)">Testimonial</li>
+                <li onclick="scrollToParticularElement('.category.one', true)">About</li>
+                <li onclick="scrollToParticularElement('.category.one', true)">Contact</li>
               </ul>  
             </nav>
           </div>
@@ -128,52 +118,22 @@
                       </div>
                     </div>
 
+                    <div class="swiper-pagination-container">
+                      <div class="swiper-pagination"></div>
+                    </div>
+
                     <!-- slider controls -->
                     <div class="slider-controls fade-up-two">
-                      <div class="control left">
-                        <div class="swiper-nav-ctrl prev-ctrl">
-                          <img
-                            src="images/prev.png"
-                            alt="prev"
-                            class="slider-control-image"
-                          />
-                        </div>
-                      </div>
-                      <!-- <div class="swiper-pagination-container">
-                              <div class="control">
-                                <div class="swiper-pagination"></div>
-                              </div>
-                            </div> -->
-                      <div class="control right">
-                        <div class="swiper-nav-ctrl next-ctrl">
-                          <img
-                            src="images/next.png"
-                            alt="next"
-                            class="slider-control-image"
-                          />
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        <!-- <div class="scroll-icon fade-up"> -->
-        <!-- <i class="gg-mouse"></i> -->
-        <!-- </div> -->
-        <div class="slider-pager-container">
-          <div class="slider-pager">
-            <div class="circle active"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-          </div>
-        </div>
       </section>
 
 
-      <div class="categories">
+      <div id="categories" class="categories">
         <section class="two">
           <h1>Description</h1>
         </section>
@@ -294,7 +254,7 @@
         <div class="project marine-project">
           <div class="navigation navigation-project">
             <div class="logo home-link about-opacity">
-              <a href="#">ANIL CHAUHAN PHOTOGRAPHY</a>
+              <a href="/">ANIL CHAUHAN PHOTOGRAPHY</a>
             </div>
 
             <div class="navigation-links about-opacity">
@@ -346,7 +306,7 @@
         <div class="project forest-project">
           <div class="navigation navigation-project">
             <div class="logo home-link about-opacity">
-              <a href="#">ANIL CHAUHAN PHOTOGRAPHY</a>
+              <a href="/">ANIL CHAUHAN PHOTOGRAPHY</a>
             </div>
 
             <div class="navigation-links about-opacity">

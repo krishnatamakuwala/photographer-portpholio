@@ -22,10 +22,10 @@ $(window).on("load", function () {
             centeredSlides: true,
             loop: true,
             grabCursor: false,
-            navigation: {
-                nextEl: "#next",
-                prevEl: "#prev",
-            },
+            // navigation: {
+            //     nextEl: "#next",
+            //     prevEl: "#prev",
+            // },
             mousewheel: false,
             allowTouchMove: false,
             // observer: true,
@@ -68,13 +68,16 @@ $(window).on("load", function () {
                     },
                 },
                 pagination: {
-                    el: ".swiper-pagination",
-                    type: "progressbar",
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '"></span>';
+                    },
                 },
-                navigation: {
-                    nextEl: ".slider-controls .next-ctrl",
-                    prevEl: ".slider-controls .prev-ctrl",
-                },
+                // navigation: {
+                //     nextEl: ".slider-controls .next-ctrl",
+                //     prevEl: ".slider-controls .prev-ctrl",
+                // },
             };
 
             parallaxSlider = new Swiper(".parallax-slider", parallaxSliderOptions);
@@ -377,7 +380,7 @@ function scrollFunction() {
             document.body.scrollTop > 700 ||
             document.documentElement.scrollTop > 700
     ) {
-            console.log("scroll bottom");
+            // console.log("scroll bottom");
             document.getElementsByClassName("navigation")[0].classList.add("scroll");
             // document.getElementsByClassName("logo")[0].classList.remove("center");
             // document
@@ -385,7 +388,7 @@ function scrollFunction() {
             //   .classList.remove("hide");
             // document.getElementById("logo").style.fontSize = "25px";
     } else {
-        console.log("scroll top");
+        // console.log("scroll top");
         document.getElementsByClassName("navigation")[0].classList.remove("scroll");
         // document.getElementsByClassName("logo")[0].classList.add("center");
         // document
@@ -395,9 +398,18 @@ function scrollFunction() {
     }
 }
 
+function scrollToParticularElement(element, isFromBurgerMenu) {
+    if (isFromBurgerMenu) {
+        $(".burger-menu-icon").prop('checked', false);
+    }
+    $('html, body').animate({
+        scrollTop: $(element).offset().top
+    }, 1200);
+}
+
 function initCategoryOverlayEffect() {
     let categoryPanels = gsap.utils.toArray(".category");
-    console.log(categoryPanels);
+    // console.log(categoryPanels);
     // let tops = categoryPanels.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
     categoryPanels.forEach((panel, i) => {
         // let image = panel.querySelector("img");
@@ -411,7 +423,7 @@ function initCategoryOverlayEffect() {
             // markers: true,
             onEnter: () => {
                 // debugger;
-                console.log("entered: ");
+                // console.log("entered: ");
                 // gsap.from(image.id, 0.5, { scale: 1.3, delay: 1.1 });
             }
         });
@@ -429,7 +441,7 @@ function initCategoryOverlayEffect() {
                 // pinSpacing: false,
                 // start: "top top",
                 // markers: true,
-                toggleActions: "restart none none reset",
+                toggleActions: "restart complete none reset",
                 // scrub: true
             },
         });
@@ -447,9 +459,9 @@ function initCategoryOverlayEffect() {
             // delay: -1.5,
             ease: Power2.out
         });
-        console.log(tl.duration());
-        console.log('*', tl);
-        console.log('***', tl.scrollTrigger);
+        // console.log(tl.duration());
+        // console.log('*', tl);
+        // console.log('***', tl.scrollTrigger);
     });
     ScrollTrigger.refresh();
     // GSDevTools.create();
