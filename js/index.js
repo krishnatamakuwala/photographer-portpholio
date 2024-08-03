@@ -15,28 +15,24 @@ $(window).on("load", function () {
     $(function () {
         //slideshow
 
-        new Swiper("#projects .swiper-container", {
-            slidesPerView: "auto",
-            speed: 1000,
-            spaceBetween: 30,
-            centeredSlides: true,
-            loop: true,
-            grabCursor: false,
-            // navigation: {
-            //     nextEl: "#next",
-            //     prevEl: "#prev",
-            // },
-            mousewheel: false,
-            allowTouchMove: false,
-            // observer: true,
-            // observeParents: true,
-        });
+        // new Swiper("#cover-slider", {
+        //     slidesPerView: "auto",
+        //     speed: 1000,
+        //     spaceBetween: 30,
+        //     centeredSlides: true,
+        //     loop: true,
+        //     grabCursor: false,
+        //     mousewheel: false,
+        //     allowTouchMove: false
+        // });
 
         //parallax
         $(document).ready(function () {
             gsap.registerPlugin(ScrollTrigger);
             initCategoryOverlayEffect();
             var parallaxSlider;
+            var testimonialImageSlider;
+            var testimonialContentSlider;
             var parallaxSliderOptions = {
                 speed: 1500,
                 autoplay: {
@@ -53,11 +49,11 @@ $(window).on("load", function () {
                     init: function () {
                         let swiper = this;
                         for (let i = 0; i < swiper.slides.length; i++) {
-                        $(swiper.slides[i])
-                            .find(".img-container")
-                            .attr({
-                            "data-swiper-parallax": 0.75 * swiper.width,
-                            });
+                            $(swiper.slides[i])
+                                .find(".img-container")
+                                .attr({
+                                "data-swiper-parallax": 0.75 * swiper.width,
+                                });
                         }
                     },
                     activeIndexChange: function () {
@@ -68,42 +64,125 @@ $(window).on("load", function () {
                     },
                 },
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '#cover-swiper-pagination',
                     clickable: true,
                     renderBullet: function (index, className) {
                         return '<span class="' + className + '"></span>';
                     },
-                },
-                // navigation: {
-                //     nextEl: ".slider-controls .next-ctrl",
-                //     prevEl: ".slider-controls .prev-ctrl",
-                // },
+                }
             };
 
-            parallaxSlider = new Swiper(".parallax-slider", parallaxSliderOptions);
+            // var testimonialSliderOptions = {
+            //     speed: 1500,
+            //     autoplay: {
+            //         delay: 4500,
+            //         disableOnInteraction: false,
+            //     },
+            //     // loop: true,
+            //     centeredSlides: true,
+            //     on: {
+            //         init: function () {
+            //             let swiper = this;
+            //             debugger;
+            //             for (let i = 0; i < swiper.slides.length; i++) {
+            //             $(swiper.slides[i])
+            //                 .find(".testimonial-content")
+            //                 .attr({
+            //                 "data-swiper-parallax": 0.75 * swiper.width,
+            //                 });
+            //             }
+            //         },
+            //         activeIndexChange: function () {
+            //             // console.log(this);
+            //         },
+            //         resize: function () {
+            //             this.update();
+            //         },
+            //     },
+            //     pagination: {
+            //         el: '#testimonial-swiper-pagination',
+            //         clickable: true,
+            //         renderBullet: function (index, className) {
+            //             return '<span class="' + className + '"></span>';
+            //         },
+            //     },
+            //     navigation: {
+            //         nextEl: "#testimonial-controls .next-ctrl",
+            //         prevEl: "#testimonial-controls .prev-ctrl",
+            //     },
+            // };
+
+            var testimonialContentSliderOptions = {
+                direction: "vertical",
+                effect: "slide",
+                //autoHeight: true,
+                loop: false, // Not recommended to enable!!!
+                allowTouchMove: false,
+            }
+
+            var testimonialImageSliderOptions = {
+                mousewheel: true,
+                speed: 1000,
+                loop: false, // Not recommended to enable!!!
+                longSwipesRatio: 0.01,
+                followFinger: false,
+                grabCursor: true, 
+                watchSlidesProgress: true,
+                parallax: true,
+                lazy: {
+                    loadPrevNext: true,
+                },
+                navigation: {
+                    nextEl: '#testimonial-controls .next-ctrl',
+                    prevEl: '#testimonial-controls .prev-ctrl',
+                }
+            }
+
+            parallaxSlider = new Swiper("#cover-slider", parallaxSliderOptions);
+            testimonialContentSlider = new Swiper("#testimonial-container-right", testimonialContentSliderOptions);
+            testimonialImageSlider = new Swiper("#testimonial-container-left", testimonialImageSliderOptions);
+            // testimonialSlider = new Swiper("#testimonial-swiper", testimonialSliderOptions);
             $(window).on("resize", function () {
+                testimonialImageSlider.destroy();
+                testimonialContentSlider.destroy();
                 parallaxSlider.destroy();
-                parallaxSlider = new Swiper(".parallax-slider", parallaxSliderOptions);
+                parallaxSlider = new Swiper("#cover-slider", parallaxSliderOptions);
+                testimonialImageSlider = new Swiper("#testimonial-container-left", testimonialImageSliderOptions);
+                testimonialContentSlider = new Swiper("#testimonial-container-right", testimonialContentSliderOptions);
+                testimonialImageSlider.controller.control = testimonialContentSlider;
             });
             $(".home-link").on("click", function () {
                 setTimeout(function () {
                 parallaxSlider.destroy();
+                testimonialImageSlider.destroy();
+                testimonialContentSlider.destroy();
                 parallaxSlider = new Swiper(
-                    ".parallax-slider",
+                    "#cover-slider",
                     parallaxSliderOptions
                 );
+                testimonialImageSlider = new Swiper("#testimonial-container-left", testimonialImageSliderOptions);
+                testimonialContentSlider = new Swiper("#testimonial-container-right", testimonialContentSliderOptions);
+                testimonialImageSlider.controller.control = testimonialContentSlider;
                 }, 750);
             });
 
             $(".navigation-close").on("click", function () {
                 setTimeout(function () {
                 parallaxSlider.destroy();
+                testimonialImageSlider.destroy();
+                testimonialContentSlider.destroy();
                 parallaxSlider = new Swiper(
-                    ".parallax-slider",
+                    "#cover-slider",
                     parallaxSliderOptions
                 );
+                testimonialImageSlider = new Swiper("#testimonial-container-left", testimonialImageSliderOptions);
+                testimonialContentSlider = new Swiper("#testimonial-container-right", testimonialContentSliderOptions);
+                testimonialImageSlider.controller.control = testimonialContentSlider;
                 }, 750);
             });
+
+            testimonialImageSlider.controller.control = testimonialContentSlider;
+            debugger;
         });
         //parallax over
 

@@ -41,6 +41,11 @@ html {
   overflow: hidden;
 }
 
+.testimonial-slider-container .swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+
 .parallax-slider .img-container {
   position: absolute;
   top: 0;
@@ -51,6 +56,10 @@ html {
   background-position: center;
   background-size: cover;
   /* filter: grayscale(10); */
+}
+
+.testimonial-slider-container .testimonial-content {
+  position: absolute;
 }
 
 .slider-controls {
@@ -84,11 +93,107 @@ section.two {
 }
 
 section.three {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(252, 120, 232);
-/*   opacity: 0.5; */
+  background-color: rgb(255, 255, 255);
+  > .testimonial-container {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    height: 100%;
+    width: 100%;
+    padding: 9% 12% 5% 12%;
+    > .title {
+      margin-bottom: 5%;
+      display: flex;
+      height: auto;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      > .left {
+        height: 100%;
+        width: 40%;
+      }
+      > .right {
+        height: 100%;
+        width: 40%;
+      }
+    }
+    > .testimonial-content-container {
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+      > .left {
+        /* background-color: cadetblue; */
+        height: 100%;
+        width: 40%;
+        flex-direction: column;
+        overflow: hidden;
+        > .swiper-container {
+          overflow: hidden;
+          box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2), 0px 9px 40px 0 rgba(0, 0, 0, 0.19);
+          height: 100%;
+          > .swiper-wrapper > .swiper-slide {
+            > .testimonial-image {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+              /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+            }
+          }
+        }
+      }
+      > .right {
+        /* background-color: hotpink; */
+        height: 100%;
+        width: 40%;
+        text-align: justify;
+        overflow: hidden;
+        > .swiper-container {
+          overflow: hidden;
+          height: 100%;
+          > .swiper-wrapper > .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            > .testimonial-content-title {
+              margin-bottom: 5%;
+            }
+            > .testimonial-content-p {
+              color: #1b1b1b;
+            }
+          }
+        }
+      }
+    }
+    
+    /* > .swiper-container {
+      overflow: hidden;
+      > .swiper-wrapper > .swiper-slide {
+        > .testimonial-content {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between;
+          
+        }
+      }
+    } */
+  }
+}
+
+section.four {
+  background-color: rgb(139, 219, 156);
+}
+
+.testimonials-bg-rect-design {
+  height: 90%;
+  width: 65%;
+  background-color: #f3c4ff;
+  bottom: 0;
+  right: 0;
+  position: absolute;
 }
 
 section.category.one {
@@ -244,6 +349,11 @@ section.category.four {
 
 .parallax-slider {
   height: 100vh;
+  width: 100%;
+}
+
+.testimonial-slider-container {
+  height: 100%;
   width: 100%;
 }
 
@@ -508,6 +618,7 @@ li {
 } */
 .slider-control-image {
   height: 50px;
+  background-color: #000000;
 }
 /* .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: rgb(245, 245, 245);
