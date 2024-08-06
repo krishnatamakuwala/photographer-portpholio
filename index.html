@@ -44,7 +44,7 @@
           <div class="navigation-links hide">
             <ul>
               <li class="links" onclick="scrollToParticularElement('.category.one', false)">Gallery</li>
-              <li class="links" onclick="scrollToParticularElement('.category.one', false)">Testimonial</li>
+              <li class="links" onclick="scrollToParticularElement('.testimonial-container', false)">Testimonial</li>
               <li class="links" onclick="scrollToParticularElement('.category.one', false)">About</li>
               <li class="links" onclick="scrollToParticularElement('.category.one', false)">Contact</li>
             </ul>
@@ -63,7 +63,7 @@
             <nav>    
               <ul>
                 <li onclick="scrollToParticularElement('.category.one', true)">Gallery</li>
-                <li onclick="scrollToParticularElement('.category.one', true)">Testimonial</li>
+                <li onclick="scrollToParticularElement('.testimonial-container', true)">Testimonial</li>
                 <li onclick="scrollToParticularElement('.category.one', true)">About</li>
                 <li onclick="scrollToParticularElement('.category.one', true)">Contact</li>
               </ul>  
@@ -176,7 +176,11 @@
 
         <section class="three">
           <!-- <h1>Description Three</h1> -->
-          <div class="testimonials-bg-rect-design"></div>
+          <div class="testimonials-bg-rect-design">
+            <div>
+              <!-- <img src="images/design-1.svg" alt="" srcset=""> -->
+            </div>
+          </div>
           <div class="testimonial-container">
             <div class="title">
               <div class="left">
@@ -190,17 +194,25 @@
                 <div id="testimonial-container-left" class="swiper-container">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img class="testimonial-image" src="https://images.unsplash.com/photo-1653153029436-6dd5091852b9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+                      <img class="testimonial-image" src="https://images.unsplash.com/photo-1656633702381-939966720da4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
                     </div>
                     <div class="swiper-slide">
-                      <img class="testimonial-image" src="https://images.unsplash.com/photo-1568819317551-31051b37f69f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+                      <img class="testimonial-image" src="https://images.unsplash.com/photo-1543932927-a9def13a0e7c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="testimonial-image" src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?q=80&w=1636&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="right">
                 <div id="testimonial-container-right" class="swiper-container">
                   <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <h4 class="testimonial-content-title">Excellent service with glamorous touch</h4>
+                        <p class="testimonial-content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque incidunt, iure eligendi ipsam neque provident sit blanditiis laboriosam alias. Hic rem ipsam fugiat quas! Fuga rem sunt praesentium vel quam!</p>
+                    </div>
                     <div class="swiper-slide">
                       <h4 class="testimonial-content-title">Excellent service with glamorous touch</h4>
                         <p class="testimonial-content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque incidunt, iure eligendi ipsam neque provident sit blanditiis laboriosam alias. Hic rem ipsam fugiat quas! Fuga rem sunt praesentium vel quam!</p>
@@ -221,20 +233,12 @@
             <div id="testimonial-controls" class="slider-controls fade-up-two">
               <div class="control left">
                 <div class="swiper-nav-ctrl prev-ctrl">
-                  <img
-                    src="images/prev.png"
-                    alt="prev"
-                    class="slider-control-image"
-                  />
+                  <img src="images/left-arrow-svgrepo-com.svg" alt="prev" class="slider-control-image"/>
                 </div>
               </div>
               <div class="control right">
                 <div class="swiper-nav-ctrl next-ctrl">
-                  <img
-                    src="images/next.png"
-                    alt="next"
-                    class="slider-control-image"
-                  />
+                  <img src="images/right-arrow-svgrepo-com.svg" alt="next" class="slider-control-image"/>
                 </div>
               </div>
             </div>
@@ -312,6 +316,24 @@
           <!-- <h1>Description Three</h1> -->
            <!-- <div class="testimonials-bg-rect-design"></div> -->
         </section>
+
+        <footer class="footer" id="footer">
+          <div class="col col1">
+            <h3>CoolSite</h3>
+            <div class="social">
+              <a href="https://codepen.io/Juxtopposed" target="_blank" class="link"><img class="footer-social-icon" src="images/instagram.png" alt="" /></a>
+              <a href="https://twitter.com/juxtopposed" target="_blank" class="link"><img class="footer-social-icon" src="https://assets.codepen.io/9051928/x.png" alt="" /></a>
+              <a href="https://youtube.com/@juxtopposed" target="_blank" class="link"><img class="footer-social-icon" src="https://assets.codepen.io/9051928/youtube_1.png" alt="" /></a>
+            </div class="col col-2">
+            <p style="color: #818181; font-size: smaller; margin-top: 10px;">2024 © All Rights Reserved</p>
+          </div>
+          <div class="col col2">
+            <p class="footer-links">Gallery</p>
+            <p class="footer-links">Testimonials</p>
+            <p class="footer-links">About Us</p>
+            <p class="footer-links">Contact Us</p>
+          </div>
+        </footer>
       </div>
 
         <!-- <div class="social-media-links">

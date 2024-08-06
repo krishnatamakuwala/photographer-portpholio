@@ -115,7 +115,7 @@ $(window).on("load", function () {
             var testimonialContentSliderOptions = {
                 direction: "vertical",
                 effect: "slide",
-                //autoHeight: true,
+                autoHeight: true,
                 loop: false, // Not recommended to enable!!!
                 allowTouchMove: false,
             }
@@ -123,14 +123,29 @@ $(window).on("load", function () {
             var testimonialImageSliderOptions = {
                 mousewheel: true,
                 speed: 1000,
+                slidesPerView: 1,
+                centeredSlides: true,
+                // spaceBetween: 10,
                 loop: false, // Not recommended to enable!!!
-                longSwipesRatio: 0.01,
+                // longSwipesRatio: 0.01,
                 followFinger: false,
                 grabCursor: true, 
-                watchSlidesProgress: true,
+                // watchSlidesProgress: true,
                 parallax: true,
                 lazy: {
                     loadPrevNext: true,
+                },
+                on: {
+                    resize: function () {
+                        this.update();
+                    },
+                },
+                pagination: {
+                    el: '#testimonial-swiper-pagination',
+                    clickable: false,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '"></span>';
+                    },
                 },
                 navigation: {
                     nextEl: '#testimonial-controls .next-ctrl',
@@ -182,7 +197,6 @@ $(window).on("load", function () {
             });
 
             testimonialImageSlider.controller.control = testimonialContentSlider;
-            debugger;
         });
         //parallax over
 
