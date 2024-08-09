@@ -36,6 +36,8 @@
       <div id="breaker"></div>
 
       <div id="home">
+
+        <!-- Navigation -->
         <div class="navigation fade-down">
           <div class="logo home-link">
             <a href="/">Anil Chauhan Photography</a>
@@ -43,10 +45,10 @@
 
           <div class="navigation-links hide">
             <ul>
-              <li class="links" onclick="scrollToParticularElement('.category.one', false)">Gallery</li>
+              <li class="links" onclick="scrollToParticularElement('.categories', false)">Gallery</li>
               <li class="links" onclick="scrollToParticularElement('.testimonial-container', false)">Testimonial</li>
-              <li class="links" onclick="scrollToParticularElement('.category.one', false)">About</li>
-              <li class="links" onclick="scrollToParticularElement('.category.one', false)">Contact</li>
+              <li class="links" onclick="scrollToParticularElement('.about-us', false)">About</li>
+              <li class="links" onclick="scrollToParticularElement('div.contact-header', false)">Contact</li>
             </ul>
           </div>
 
@@ -62,10 +64,10 @@
 
             <nav>    
               <ul>
-                <li onclick="scrollToParticularElement('.category.one', true)">Gallery</li>
+                <li onclick="scrollToParticularElement('.categories', true)">Gallery</li>
                 <li onclick="scrollToParticularElement('.testimonial-container', true)">Testimonial</li>
-                <li onclick="scrollToParticularElement('.category.one', true)">About</li>
-                <li onclick="scrollToParticularElement('.category.one', true)">Contact</li>
+                <li onclick="scrollToParticularElement('.about-us', true)">About</li>
+                <li onclick="scrollToParticularElement('.contact-us', true)">Contact</li>
               </ul>  
             </nav>
           </div>
@@ -132,44 +134,44 @@
           </div>
       </section>
 
+      <section class="two">
+        <h1>Description</h1>
+      </section>
 
       <div id="categories" class="categories">
-        <section class="two">
-          <h1>Description</h1>
-        </section>
         <section class="category one">
           <div class="category-image-container">
-            <div class="category-label-container">
+            <a href="./gallery/landscape.html" class="category-label-container">
               <h1>Landscape</h1>
               <img class="arrow-icon" src="./images/up-arrow-svgrepo-com.svg" alt="" srcset="">
-            </div>
+            </a>
             <img id="img1" class="overlay-img" src="https://s.studiobinder.com/wp-content/uploads/2023/10/Types-of-Photography-%E2%80%94-Styles-Genres-Techniques-Landscape-photography-%E2%80%A2-Different-kinds-of-photography.png" alt="" srcset="">
           </div>
         </section>
         <section class="category two">
           <div class="category-image-container">
-            <div class="category-label-container">
+            <a href="./gallery/wedding.html" class="category-label-container">
               <h1>Wedding</h1>
               <img class="arrow-icon" src="./images/up-arrow-svgrepo-com.svg" alt="" srcset="">
-            </div>
+            </a>
             <img id="img2" class="overlay-img" src="https://s.studiobinder.com/wp-content/uploads/2023/10/Types-of-Photography-Wedding-photography.jpg" alt="" srcset="">
           </div>
         </section>
         <section class="category three">
           <div class="category-image-container">
-            <div class="category-label-container">
+            <a href="./gallery/portrait.html" class="category-label-container">
               <h1>Potrait</h1>
               <img class="arrow-icon" src="./images/up-arrow-svgrepo-com.svg" alt="" srcset="">
-            </div>
+            </a>
             <img id="img3" class="overlay-img" src="https://s.studiobinder.com/wp-content/uploads/2023/10/Types-of-Photography-Portrait-photography.png" alt="" srcset="">
           </div>
         </section>
         <section class="category four">
           <div class="category-image-container">
-            <div class="category-label-container">
+            <a href="./gallery/hideandseek.html" class="category-label-container">
               <h1>Hide & Seek</h1>
               <img class="arrow-icon" src="./images/up-arrow-svgrepo-com.svg" alt="" srcset="">
-            </div>
+            </a>
             <img id="img4" class="overlay-img" src="https://s.studiobinder.com/wp-content/uploads/2023/10/Types-of-Photography-%E2%80%94-Styles-Genres-Candid-picture-%E2%80%A2-Photography-types.png" alt="" srcset="">
           </div>
         </section>
@@ -211,15 +213,21 @@
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <h4 class="testimonial-content-title">Excellent service with glamorous touch</h4>
-                        <p class="testimonial-content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque incidunt, iure eligendi ipsam neque provident sit blanditiis laboriosam alias. Hic rem ipsam fugiat quas! Fuga rem sunt praesentium vel quam!</p>
+                        <div class="quote-text">
+                          <blockquote class="testimonial-content-p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque incidunt, iure eligendi ipsam neque provident sit blanditiis laboriosam alias. Hic rem ipsam fugiat quas! Fuga rem sunt praesentium vel quam!</blockquote>
+                        </div>
                     </div>
                     <div class="swiper-slide">
                       <h4 class="testimonial-content-title">Excellent service with glamorous touch</h4>
-                        <p class="testimonial-content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque incidunt, iure eligendi ipsam neque provident sit blanditiis laboriosam alias. Hic rem ipsam fugiat quas! Fuga rem sunt praesentium vel quam!</p>
+                      <div class="quote-text">
+                        <blockquote class="testimonial-content-p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque incidunt, iure eligendi ipsam neque provident sit blanditiis laboriosam alias. Hic rem ipsam fugiat quas! Fuga rem sunt praesentium vel quam!</blockquote>
+                      </div>
                     </div>
                     <div class="swiper-slide">
                       <h4 class="testimonial-content-title">Excellent service with glamorous touch</h4>
-                        <p class="testimonial-content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque incidunt, iure eligendi ipsam neque provident sit blanditiis laboriosam alias. Hic rem ipsam fugiat quas! Fuga rem sunt praesentium vel quam!</p>
+                      <div class="quote-text">
+                        <blockquote class="testimonial-content-p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque incidunt, iure eligendi ipsam neque provident sit blanditiis laboriosam alias. Hic rem ipsam fugiat quas! Fuga rem sunt praesentium vel quam!</blockquote>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -312,10 +320,90 @@
           </div> -->
         </section>
 
-        <section class="four">
-          <!-- <h1>Description Three</h1> -->
-           <!-- <div class="testimonials-bg-rect-design"></div> -->
+        <section class="about-us">
+          <!-- <div class="testimonials-bg-rect-design left top"></div> -->
+          <h1>About Us</h1>
+          <div class="member-container">
+            <div class="member-card">
+              <img class="member-image" src="images/about-pic.webp" alt="" srcset="">
+              <div class="member-content-container">
+                <h4>Anil Chauhan</h4>
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet aspernatur sed modi, praesentium repellendus alias quas in? Ut aut error quas impedit voluptate deserunt, repudiandae adipisci consectetur consequatur modi.
+                </blockquote>
+              </div>
+            </div>
+            <div class="member-card">
+              <img class="member-image" src="images/about-pic.webp" alt="" srcset="">
+              <div class="member-content-container">
+                <h4>Anil Chauhan</h4>
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet aspernatur sed modi, praesentium repellendus alias quas in? Ut aut error quas impedit voluptate deserunt, repudiandae adipisci consectetur consequatur modi.
+                </blockquote>
+              </div>
+            </div>
+            <div class="member-card">
+              <img class="member-image" src="images/about-pic.webp" alt="" srcset="">
+              <div class="member-content-container">
+                <h4>Anil Chauhan</h4>
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet aspernatur sed modi, praesentium repellendus alias quas in? Ut aut error quas impedit voluptate deserunt, repudiandae adipisci consectetur consequatur modi.
+                </blockquote>
+              </div>
+            </div>
+          </div>
         </section>
+
+        <section class="contact-us">
+          <!-- <div class="testimonials-bg-rect-design left-top"></div> -->
+          <div class="form-container">
+            <div class="contact-header">
+              Getting in touch is easy.
+            </div>
+            <div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-md-12 col-lg-12 col-sm-12 col-xs-12 p-0 m-0">
+                  <div class="form" autocomplete="false">
+                    <form id="myForm" action="mail.php">
+                      <div class="input-line-column">
+                        <input
+                          id="name"
+                          type="text"
+                          placeholder="name"
+                        />
+                      </div>
+                      <div class="input-line">
+                        <input
+                          id="contactnumber"
+                          type="number"
+                          placeholder="conact number"
+                          class="input-same-line"
+                        />
+                        <input
+                          id="email"
+                          type="email"
+                          placeholder="email"
+                          class="input-same-line"
+                        />
+                      </div>
+                      <div class="input-line-column">
+                        <input id="subject" type="text" placeholder="subject" />
+                        <textarea
+                          name="textarea"
+                          id="body"
+                          class="textarea"
+                          placeholder="message"
+                        ></textarea>
+                      </div>
+                      <button type="button" id="submit" class="hover">Send</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         <footer class="footer" id="footer">
           <div class="col col1">
@@ -328,10 +416,12 @@
             <p style="color: #818181; font-size: smaller; margin-top: 10px;">2024 © All Rights Reserved</p>
           </div>
           <div class="col col2">
-            <p class="footer-links">Gallery</p>
-            <p class="footer-links">Testimonials</p>
-            <p class="footer-links">About Us</p>
-            <p class="footer-links">Contact Us</p>
+            <ul>
+            <li class="footer-links" onclick="scrollToParticularElement('.categories', false)">Gallery</li>
+            <li class="footer-links" onclick="scrollToParticularElement('.testimonial-container', false)">Testimonials</li>
+            <li class="footer-links" onclick="scrollToParticularElement('.about-us', false)">About Us</li>
+            <li class="footer-links" onclick="scrollToParticularElement('.contact-us', false)">Contact Us</li>
+            </ul>
           </div>
         </footer>
       </div>
@@ -404,277 +494,6 @@
         </div>
       </div>
       <!-- ABOUT -->
-
-      <!-- PROJECTS -->
-      <div id="projects">
-        <!-- MARINE PROJECT -->
-        <div class="project marine-project">
-          <div class="navigation navigation-project">
-            <div class="logo home-link about-opacity">
-              <a href="/">ANIL CHAUHAN PHOTOGRAPHY</a>
-            </div>
-
-            <div class="navigation-links about-opacity">
-              <div class="navigation-close hover marine-close">
-                <div class="navigation-close-line"></div>
-                <div class="navigation-close-line"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 p-0 m-0">
-            <div class="slideshow-container">
-              <div class="slides">
-                <img src="images/header-image-one.webp" alt="marine-image" />
-              </div>
-              <!-- <div class="slides">
-            <img src="images/marine-image-three.webp" alt="marine-image">
-          </div>
-           <div class="slides">
-             <img src="images/marine-image-six.webp" alt="marine-image">
-           </div>
-           <div class="slides">
-             <img src="images/marine-image-five.webp" alt="marine-image">
-           </div>
-           <div class="slides">
-             <img src="images/marine-image-two.webp" alt="marine-image">
-           </div> -->
-            </div>
-          </div>
-          <div class="controls">
-            <button id="prev" class="hover">
-              <img src="images/prev.png" alt="" class="imgs" />
-            </button>
-            <button id="next" class="hover">
-              <img src="images/next.png" alt="" class="imgs" />
-            </button>
-          </div>
-          <div class="project-name">MARINE</div>
-          <div class="social-media-links opacity">
-            <ul>
-              <li><a href="#">FB</a></li>
-              <li><a href="#">IN</a></li>
-              <li><a href="#">TW</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- MARINE PROJECT -->
-
-        <!-- FOREST PROJECT -->
-        <div class="project forest-project">
-          <div class="navigation navigation-project">
-            <div class="logo home-link about-opacity">
-              <a href="/">ANIL CHAUHAN PHOTOGRAPHY</a>
-            </div>
-
-            <div class="navigation-links about-opacity">
-              <div class="navigation-close hover forest-close">
-                <div class="navigation-close-line"></div>
-                <div class="navigation-close-line"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 p-0 m-0">
-            <div class="slideshow">
-              <div class="forest-slides">
-                <img src="images/header-image-two.webp" alt="marine-image" />
-              </div>
-              <!-- <div class="forest-slides">
-     <img src="images/forest-image-two.webp" alt="marine-image">
-   </div>
-   <div class="forest-slides">
-     <img src="images/forest-image-three.webp" alt="marine-image">
-   </div>
-   <div class="forest-slides">
-     <img src="images/forest-image-five.webp" alt="marine-image">
-   </div>
-   <div class="forest-slides">
-     <img src="images/forest-image-six.webp" alt="marine-image">
-   </div> -->
-            </div>
-          </div>
-          <div class="controls">
-            <button id="forest-prev" class="hover">
-              <img src="images/prev.png" alt="prev" class="imgs" />
-            </button>
-            <button id="forest-next" class="hover">
-              <img src="images/next.png" alt="next" class="imgs" />
-            </button>
-          </div>
-          <div class="project-name">FOREST</div>
-          <div class="social-media-links opacity">
-            <ul>
-              <li><a href="#">FB</a></li>
-              <li><a href="#">IN</a></li>
-              <li><a href="#">TW</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- FOREST PROJECT -->
-
-        <!-- wildlife PROJECT -->
-        <div class="project wildlife-project">
-          <div class="navigation navigation-project">
-            <div class="logo home-link about-opacity">
-              <a href="#">ANIL CHAUHAN PHOTOGRAPHY</a>
-            </div>
-
-            <div class="navigation-links about-opacity">
-              <div class="navigation-close hover wildlife-close">
-                <div class="navigation-close-line"></div>
-                <div class="navigation-close-line"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 p-0 m-0">
-            <div class="slideshow">
-              <div class="wildlife-slides">
-                <img src="images/header-image-three.webp" alt="marine-image" />
-              </div>
-              <!-- <div class="wildlife-slides">
-     <img src="images/wildlife-image-two.webp" alt="marine-image">
-   </div>
-   <div class="wildlife-slides">
-     <img src="images/wildlife-image-three.webp" alt="marine-image">
-   </div>
-   <div class="wildlife-slides">
-     <img src="images/wildlife-image-four.webp" alt="marine-image">
-   </div>
-   <div class="wildlife-slides">
-     <img src="images/wildlife-image-five.webp" alt="marine-image">
-   </div>
-   <div class="wildlife-slides">
-     <img src="images/wildlife-image-six.webp" alt="marine-image">
-   </div> -->
-            </div>
-          </div>
-          <div class="controls">
-            <button id="wildlife-prev" class="hover">
-              <img src="images/prev.png" alt="prev" class="imgs" />
-            </button>
-            <button id="wildlife-next" class="hover">
-              <img src="images/next.png" alt="next" class="imgs" />
-            </button>
-          </div>
-          <div class="project-name">wildlife</div>
-          <div class="social-media-links opacity">
-            <ul>
-              <li><a href="#">FB</a></li>
-              <li><a href="#">IN</a></li>
-              <li><a href="#">TW</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- wildlife PROJECT -->
-
-        <!-- wildlife PROJECT -->
-        <div class="project city-project">
-          <div class="navigation navigation-project">
-            <div class="logo home-link about-opacity">
-              <a href="#">ANIL CHAUHAN PHOTOGRAPHY</a>
-            </div>
-
-            <div class="navigation-links about-opacity">
-              <div class="navigation-close hover city-close">
-                <div class="navigation-close-line"></div>
-                <div class="navigation-close-line"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 p-0 m-0">
-            <div class="slideshow">
-              <div class="city-slides">
-                <img src="images/header-image-four.webp" alt="city-image" />
-              </div>
-              <!-- <div class="city-slides">
-    <img src="images/city-two.webp" alt="city-image">
-  </div>
-   <div class="city-slides">
-     <img src="images/city-image-three.webp" alt="city-image">
-   </div>
-   <div class="city-slides">
-     <img src="images/city-image-four.webp" alt="city-image">
-   </div>
-   <div class="city-slides">
-     <img src="images/city-image-five.webp" alt="city-image">
-   </div> -->
-            </div>
-          </div>
-          <div class="controls">
-            <button id="city-prev" class="hover">
-              <img src="images/prev.png" alt="prev" class="imgs" />
-            </button>
-            <button id="city-next" class="hover">
-              <img src="images/next.png" alt="next" class="imgs" />
-            </button>
-          </div>
-          <div class="project-name">CITY</div>
-          <div class="social-media-links opacity">
-            <ul>
-              <li><a href="#">FB</a></li>
-              <li><a href="#">IN</a></li>
-              <li><a href="#">TW</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- CITY PROJECT -->
-
-        <!-- PROJECTS -->
-      </div>
-
-      <!--CONTACT PAGE-->
-      <div id="contact">
-        <div class="navigation navigation-contact">
-          <div class="logo home-link contact-opacity">
-            <a href="#">ANIL CHAUHAN PHOTOGRAPHY</a>
-          </div>
-
-          <div class="navigation-links contact-opacity">
-            <div class="navigation-close hover contact-close">
-              <div class="navigation-close-line"></div>
-              <div class="navigation-close-line"></div>
-            </div>
-          </div>
-        </div>
-        <div class="contact-header contact-opacity">
-          getting in touch is easy.
-        </div>
-        <div class="container-fluid">
-          <div class="row p-0 m-0">
-            <div class="col-12 col-md-12 col-lg-12 col-sm-12 col-xs-12 p-0 m-0">
-              <div class="form contact-opacity" autocomplete="false">
-                <form id="myForm" action="mail.php">
-                  <div class="input-line">
-                    <input
-                      id="name"
-                      type="text"
-                      placeholder="name"
-                      class="input-same-line"
-                    />
-                    <input
-                      id="email"
-                      type="email"
-                      placeholder="email"
-                      class="input-same-line"
-                    />
-                  </div>
-                  <div class="input-line-column">
-                    <input id="subject" type="text" placeholder="subject" />
-                    <textarea
-                      name="textarea"
-                      id="body"
-                      class="textarea"
-                      placeholder="message"
-                    ></textarea>
-                  </div>
-                  <button type="button" id="submit" class="hover">Send</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--CONTACT PAGE-->
     </div>
 
     <script
@@ -686,133 +505,5 @@
     <script src="js/bez.js"></script>
     <script src="js/pace.js"></script>
     <script src="js/index.js"></script>
-    <script>
-      $(function () {
-        //marine-slideshow
-        var slide_index = 1;
-        displaySlides(slide_index);
-        function nextSlide() {
-          displaySlides(slide_index++);
-        }
-        function prevslide() {
-          displaySlides(slide_index--);
-        }
-        function displaySlides() {
-          var i;
-          var slides = document.getElementsByClassName("slides");
-          if (slide_index > slides.length) {
-            slide_index = 1;
-          }
-          if (slide_index < 1) {
-            slide_index = slides.length;
-          }
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.opacity = 0;
-          }
-          slides[slide_index - 1].style.opacity = 1;
-        }
-        var next = document.getElementById("next");
-        next.addEventListener("click", nextSlide);
-
-        var prev = document.getElementById("prev");
-        prev.addEventListener("click", prevslide);
-      });
-
-      //forest slideshow
-
-      $(function () {
-        var slide_index = 1;
-        displaySlides(slide_index);
-        function nextSlide() {
-          displaySlides(slide_index++);
-        }
-        function prevslide() {
-          displaySlides(slide_index--);
-        }
-        function displaySlides() {
-          var i;
-          var slides = document.getElementsByClassName("forest-slides");
-          if (slide_index > slides.length) {
-            slide_index = 1;
-          }
-          if (slide_index < 1) {
-            slide_index = slides.length;
-          }
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.opacity = 0;
-          }
-          slides[slide_index - 1].style.opacity = 1;
-        }
-        var next = document.getElementById("forest-next");
-        next.addEventListener("click", nextSlide);
-
-        var prev = document.getElementById("forest-prev");
-        prev.addEventListener("click", prevslide);
-      });
-
-      //wildlife slideshow
-
-      $(function () {
-        var slide_index = 1;
-        displaySlides(slide_index);
-        function nextSlide() {
-          displaySlides(slide_index++);
-        }
-        function prevslide() {
-          displaySlides(slide_index--);
-        }
-        function displaySlides() {
-          var i;
-          var slides = document.getElementsByClassName("wildlife-slides");
-          if (slide_index > slides.length) {
-            slide_index = 1;
-          }
-          if (slide_index < 1) {
-            slide_index = slides.length;
-          }
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.opacity = 0;
-          }
-          slides[slide_index - 1].style.opacity = 1;
-        }
-        var next = document.getElementById("wildlife-next");
-        next.addEventListener("click", nextSlide);
-
-        var prev = document.getElementById("wildlife-prev");
-        prev.addEventListener("click", prevslide);
-      });
-
-      //city slideshow
-
-      $(function () {
-        var slide_index = 1;
-        displaySlides(slide_index);
-        function nextSlide() {
-          displaySlides(slide_index++);
-        }
-        function prevslide() {
-          displaySlides(slide_index--);
-        }
-        function displaySlides() {
-          var i;
-          var slides = document.getElementsByClassName("city-slides");
-          if (slide_index > slides.length) {
-            slide_index = 1;
-          }
-          if (slide_index < 1) {
-            slide_index = slides.length;
-          }
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.opacity = 0;
-          }
-          slides[slide_index - 1].style.opacity = 1;
-        }
-        var next = document.getElementById("city-next");
-        next.addEventListener("click", nextSlide);
-
-        var prev = document.getElementById("city-prev");
-        prev.addEventListener("click", prevslide);
-      });
-    </script>
   </body>
 </html>

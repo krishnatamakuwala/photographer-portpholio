@@ -20,6 +20,19 @@
   /* font-weight: normal;
   font-style: normal; */
 }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -135,6 +148,7 @@ section.three {
         width: 40%;
         flex-direction: column;
         overflow: hidden;
+        border-radius: 10px;
         > .swiper-container {
           overflow: hidden;
           box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2), 0px 9px 40px 0 rgba(0, 0, 0, 0.19);
@@ -191,8 +205,78 @@ section.three {
   }
 }
 
-section.four {
-  background-color: rgb(139, 219, 156);
+.quote-text {
+  position: relative;
+}
+blockquote {
+  font-style: italic;
+}
+blockquote:before {
+  content: open-quote;
+  top: -0.2em;
+}
+blockquote:after {
+  bottom: 0.2em;
+  content: close-quote;
+}
+blockquote:before,
+blockquote:after {
+  display: inline-block;
+  vertical-align: bottom;
+  color: orange;
+  font-size: 2em;
+  line-height: 0em;
+  position: relative;
+}
+
+section.about-us {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 9% 3%;
+  > h1 {
+    z-index: 10;
+  }
+}
+
+.member-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.member-card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0 0 10px 10px;
+  width: 28%;
+  margin: 2%;
+  > h4 {
+    text-align: center;
+  }
+  > p{
+    text-align: justify;
+  }
+}
+
+.member-content-container {
+  padding: 5%;
+}
+
+.member-image {
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+section.contact-us {
+  background-color: white;
+  height: 100%;
+  background-image: linear-gradient(rgba(255,255,255,1) 5%, rgba(36,36,36,1) 90%);
 }
 
 .testimonials-bg-rect-design {
@@ -202,6 +286,15 @@ section.four {
   bottom: 0;
   right: 0;
   position: absolute;
+  border-radius: 20px 0 0 20px;
+}
+
+.testimonials-bg-rect-design.left-top {
+  right: auto;
+  left: 0;
+  top: 0;
+  bottom: auto;
+  border-radius: 0 20px 20px 0;
 }
 
 section.category.one {
@@ -269,6 +362,11 @@ section.category.four {
   height: 35px;
   z-index: 10;
   margin-left: 15px;
+}
+
+.back-icon {
+  height: 20px;
+  margin-right: 10px;
 }
 
 .category-label-container {
@@ -397,7 +495,7 @@ section.category.four {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 10;
+  z-index: 15;
   /* color: rgb(245, 245, 245); */
   /* font-family: "Montserrat Alternates", sans-serif; */
   padding: 10px;
@@ -513,6 +611,7 @@ section.category.four {
     justify-content: center;
     align-items: center;
     > li {
+      cursor: pointer;
       opacity: 0;
       transition: .5s;
       transition-delay: 0s;
@@ -1246,12 +1345,18 @@ FOR MOBILES
         }
         > .right {
           width: 100%;
+          > .swipper-container > .swiper-wrapper > .swiper-slide > .testimonial-content-title > h4 {
+            font-size: 0.2rem;
+          }
         }
       }
     } 
   } 
   .testimonial-content-container {
     flex-direction: column;
+  }
+  .member-card {
+    width: 100%;
   }
   .navigation-links {
     display: none;
@@ -1415,7 +1520,9 @@ FOR EXTRA SMALL DEVICES
   .slider-control-image {
     height: 30px;
   }
-
+  .member-card {
+    width: 100%;
+  }
   .navigation-links {
     display: none;
   }
@@ -1614,6 +1721,9 @@ FOR EXTRA SMALL DEVICES
   .p {
     font-size: 20px;
   }
+  .member-card {
+    width: 33%;
+  }
   .navigation-links {
     display: none;
   }
@@ -1685,6 +1795,9 @@ FOR TABLETS
 @media all and (max-width: 991px) and (min-width: 750px) {
   .p {
     font-size: 20px;
+  }
+  .member-card {
+    width: 28%;
   }
   .navigation-links {
     display: none;
@@ -1764,7 +1877,8 @@ footer {
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: whitesmoke;
+  background-color: rgb(36, 36, 36);
+  color: white;
   padding: 5%;
 }
 
