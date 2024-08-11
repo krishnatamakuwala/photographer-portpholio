@@ -31,7 +31,9 @@
   <body>
     <div id="all">
       <div id="preloader">
-        <div class="p">Anil Chauhan Photography</div>
+        <div class="p">
+          <img src="images/acp-logo.svg" style="filter: invert(100%) sepia(1%) saturate(4860%) hue-rotate(129deg) brightness(113%) contrast(101%);" height="40px" alt="" srcset="">
+        </div>
       </div>
       <div id="breaker"></div>
 
@@ -40,7 +42,10 @@
         <!-- Navigation -->
         <div class="navigation fade-down">
           <div class="logo home-link">
-            <a href="/">Anil Chauhan Photography</a>
+            <a href="/">
+              <img src="images/acp-logo.svg" height="40px" alt="" srcset="">
+              <!-- Anil Chauhan Photography -->
+            </a>
           </div>
 
           <div class="navigation-links hide">
@@ -366,36 +371,56 @@
                   <div class="form" autocomplete="false">
                     <form id="myForm" action="mail.php">
                       <div class="input-line-column">
-                        <input
-                          id="name"
-                          type="text"
-                          placeholder="name"
-                        />
+                        <div class="input-container">
+                          <input
+                            id="name"
+                            type="text"
+                            placeholder="name"
+                          />
+                          <p id="err-name" class="error-input-text"></p>
+                        </div>
                       </div>
                       <div class="input-line">
-                        <input
-                          id="contactnumber"
-                          type="number"
-                          placeholder="conact number"
-                          class="input-same-line"
-                        />
-                        <input
-                          id="email"
-                          type="email"
-                          placeholder="email"
-                          class="input-same-line"
-                        />
+                        <div class="input-line-container">
+                          <div class="input-container">
+                            <input
+                              id="contactnumber"
+                              type="number"
+                              placeholder="contact number"
+                              class="input-same-line"
+                            />
+                            <p id="err-contactnumber" class="error-input-text"></p>
+                          </div>
+                          <div class="input-container">
+                            <input
+                              id="email"
+                              type="email"
+                              placeholder="email"
+                              class="input-same-line"
+                            />
+                            <p id="err-email" class="error-input-text"></p>
+                          </div>
+                        </div>
                       </div>
                       <div class="input-line-column">
-                        <input id="subject" type="text" placeholder="subject" />
-                        <textarea
-                          name="textarea"
-                          id="body"
-                          class="textarea"
-                          placeholder="message"
-                        ></textarea>
+                        <div class="input-container">
+                          <input id="subject" type="text" placeholder="subject" />
+                          <p id="err-subject" class="error-input-text"></p>
+                        </div>
+                        <div class="input-container">
+                          <textarea
+                            name="textarea"
+                            id="message"
+                            class="textarea"
+                            placeholder="message"
+                          ></textarea>
+                          <p id="err-message" class="error-input-text"></p>
+                        </div>
                       </div>
-                      <button type="button" id="submit" class="hover">Send</button>
+                      <button type="button" id="submit" class="hover">
+                        Send via Whatsapp
+                        <img src="images/whatsapp-svgrepo-com.svg" alt="" srcset="">
+                      </button>
                     </form>
                   </div>
                 </div>

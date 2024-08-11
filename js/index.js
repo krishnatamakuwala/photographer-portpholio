@@ -197,6 +197,10 @@ $(window).on("load", function () {
             });
 
             testimonialImageSlider.controller.control = testimonialContentSlider;
+
+            $("#submit").on("click", function() {
+                onSubmitContactUsForm();
+            });
         });
         //parallax over
 
@@ -507,3 +511,67 @@ window.onscroll = function () {
     }
     prevScrollpos = currentScrollPos;
 };
+
+function onSubmitContactUsForm() {
+    let isNameValid = false, isContactNumberValid = false, isEmailValid = false, isSubjectValid = false, isMessageValid = false;
+    let name = $("#name");
+    let contactnumber = $("#contactnumber");
+    let email = $("#email");
+    let subject = $("#subject");
+    let message = $("#message");
+
+    if (/<\/?[a-z][\s\S]*>/i.test(name.val()) || name.val() === '' || name.val() === undefined) {
+        $("#err-" + name.attr('id')).html("Invalid name!");
+        $("#" + name.attr('id')).addClass("error-input");
+    } else {
+        $("#err-" + name.attr('id')).html("");
+        $("#" + name.attr('id')).removeClass("error-input");
+        isNameValid = true;
+    }
+
+    if (/<\/?[a-z][\s\S]*>/i.test(contactnumber.val()) || contactnumber.val() === '' || contactnumber.val() === undefined || contactnumber.val().length != 10) {
+        $("#err-" + contactnumber.attr('id')).html("Invalid contact number!");
+        $("#" + contactnumber.attr('id')).addClass("error-input");
+    } else {
+        $("#err-" + contactnumber.attr('id')).html("");
+        $("#" + contactnumber.attr('id')).removeClass("error-input");
+        isContactNumberValid = true;
+    }
+
+    if (email.val() === '' || email.val() === undefined || !(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(email.val()))) {
+        $("#err-" + email.attr('id')).html("Invalid email!");
+        $("#" + email.attr('id')).addClass("error-input");
+    } else {
+        $("#err-" + email.attr('id')).html("");
+        $("#" + email.attr('id')).removeClass("error-input");
+        isEmailValid = true;
+    }
+
+    if (/<\/?[a-z][\s\S]*>/i.test(subject.val()) || subject.val() === '' || subject.val() === undefined) {
+        $("#err-" + subject.attr('id')).html("Invalid subject!");
+        $("#" + subject.attr('id')).addClass("error-input");
+    } else {
+        $("#err-" + subject.attr('id')).html("");
+        $("#" + subject.attr('id')).removeClass("error-input");
+        isSubjectValid = true;
+    }
+
+    if (/<\/?[a-z][\s\S]*>/i.test(message.val()) || message.val() === '' || message.val() === undefined) {
+        $("#err-" + message.attr('id')).html("Invalid message!");
+        $("#" + message.attr('id')).addClass("error-input");
+    } else if (message.val().length > 250) {
+        $("#err-" + message.attr('id')).html("Message exceeds limit of 250 character!");
+        $("#" + message.attr('id')).addClass("error-input");
+    } else {
+        $("#err-" + message.attr('id')).html("");
+        $("#" + message.attr('id')).removeClass("error-input");
+        isMessageValid = true;
+    }
+
+    if (isNameValid && isContactNumberValid && isEmailValid && isSubjectValid && isMessageValid) {
+        let whatsAppMessage = 
+        `Hello,\r\nMy name is ${name.val()}. I want to enquire about ${subject.val()}.\r\n${message.val()}.\r\nYou can contact me on my email address ${email.val()} or contact number ${contactnumber.val()}.`
+        let encodedWhatsAppMessage = encodeURI(whatsAppMessage);
+        window.open(`https://wa.me/919081301107?text=${encodedWhatsAppMessage}`, "_blank");
+    }
+}
