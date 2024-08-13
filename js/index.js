@@ -201,6 +201,36 @@ $(window).on("load", function () {
             $("#submit").on("click", function() {
                 onSubmitContactUsForm();
             });
+
+            myMap();
+            let tl = gsap.timeline({
+                // ease: "none",
+                scrollTrigger: {
+                    trigger: ".contact-us",
+                    start: "top center",
+                    end: "+=400",
+                    toggleActions: "restart complete none reset",
+                    scrub: true
+                },
+            });
+    
+            // tl.set(container, { autoAlpha: 0 });
+            // tl.from(panel, 1.5, {
+            //     // scrollTrigger: panel,
+            //     // xPercent: -100,
+            //     ease: Power2.out
+            // })
+            tl.from("#googleMap", 2, {
+                opacity: 0,
+                x: -100,
+                ease: Power2.out,
+            });
+
+            tl.from("#myForm", 2, {
+                opacity: 0,
+                x: 100,
+                ease: Power2.out,
+            });
         });
         //parallax over
 
@@ -511,6 +541,16 @@ window.onscroll = function () {
     }
     prevScrollpos = currentScrollPos;
 };
+
+function myMap() {
+    var mapProp= {
+      center:new google.maps.LatLng(21.1414806,72.7776534),
+      zoom:15,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker = new google.maps.Marker({position: new google.maps.LatLng(21.1414806,72.7776534)});
+    marker.setMap(map);
+  }
 
 function onSubmitContactUsForm() {
     let isNameValid = false, isContactNumberValid = false, isEmailValid = false, isSubjectValid = false, isMessageValid = false;
