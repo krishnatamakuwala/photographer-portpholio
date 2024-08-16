@@ -6,13 +6,12 @@ $(document).ready(function() {
 
         let title = document.title.split(" - ")[1];
     
-        const res = await fetch("http://192.168.0.106:1254/?folderName=" + title, {
+        const res = await fetch("https://anilchauhanphotography-imageservice.onrender.com/api/images/?folderName=" + title, {
             method: 'GET'
         })
-        const data= await res.json();
+        const data = await res.json();
         console.log(data);
-        return data.imageUrls;
-        // return null;
+        return data.data;
     }
 
     getImagesFromCloudinary().then(images => {

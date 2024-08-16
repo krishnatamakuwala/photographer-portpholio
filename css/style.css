@@ -121,7 +121,7 @@ section.two {
 }
 
 section.three {
-  height: 120vh;
+  /* height: 120vh; */
   background-color: rgb(255, 255, 255);
   > .testimonial-container {
     overflow: hidden;
@@ -232,7 +232,7 @@ section.three {
 }
 
 blockquote {
-  font-style: italic;
+  /* font-style: italic; */
   text-align: justify;
 }
 blockquote:before {
@@ -289,6 +289,10 @@ section.about-us {
 .member-content {
   width: 100%;
   overflow: hidden;
+}
+
+.member-content p {
+  text-align: justify;
 }
 
 .member-card {
@@ -356,6 +360,17 @@ section.contact-us {
   align-items: center;
 }
 
+.contact-description {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-description p {
+  width: 84%;
+}
+
 .form-data-container {
   display: flex;
   width: 84%;
@@ -381,33 +396,10 @@ section.contact-us {
   border-radius: 0 20px 20px 0;
 }
 
-section.category.one {
+section.category {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(120, 252, 160);
-/*   opacity: 0.5; */
-}
-section.category.two {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(232, 252, 120);
-/*   opacity: 0.5; */
-}
-section.category.three {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(252, 120, 230);
-/*   opacity: 0.5; */
-}
-section.category.four {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(155, 120, 252);
-/*   opacity: 0.5; */
 }
 
 .overlay-img {
@@ -437,7 +429,8 @@ section.category.four {
   overflow: hidden;
 }
 
-.category-image-container h1 {
+.category-image-container h1, h5 {
+  text-align: center;
   color: whitesmoke;
   z-index: 10;
 }
@@ -459,6 +452,14 @@ section.category.four {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.category-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 .swiper-pagination-container {
@@ -1550,6 +1551,9 @@ FOR MOBILES
     padding-left: 20px;
     padding-left: 10px; */
   }
+  .category-label-container {
+    flex-direction: column;
+  }
   .input-line-container {
     flex-direction: column;
   }
@@ -1753,6 +1757,9 @@ FOR EXTRA SMALL DEVICES
     /* padding-top: 20px;
     padding-left: 20px;
     padding-left: 10px; */
+  }
+  .category-label-container {
+    flex-direction: column;
   }
   .form-data-container {
     flex-direction: column;

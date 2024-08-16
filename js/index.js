@@ -458,6 +458,7 @@ async function fadeScrollEffect() {
     registerFadeScrollEffect(".member-image-container.m3", "right", 2);
     registerFadeScrollEffect(".member-content.m3", "left", 2);
     registerFadeScrollEffect(".contact-header>h3", "top", 2);
+    registerFadeScrollEffect(".contact-description>p", "top", 2);
 }
 
 function registerFadeScrollEffect(element, direction, delay) {

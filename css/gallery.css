@@ -2,16 +2,21 @@ html, body {
     background-color: white;
 }
 
-h1 { 
-    font-size: 14rem; 
-    font-family: 'Bebas Neue';
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    margin: 0;
-    color: black;
+.gallery-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 5%;
+}
+
+.gallery-content h1 {
+    text-align: center;
+}
+
+.gallery-content p {
+    margin-top: 10px;
+    text-align: justify;
 }
 
 .gallery-image {
@@ -60,12 +65,18 @@ FOR MOBILES
     }
 }
 @media all and (max-width: 576px) and (min-width: 375px) {
+    .gallery-content h1 {
+        font-size: 2rem;
+    }
     .gallery {
         column-count: 2;
     }
 }
 
 @media all and (max-width: 375px) and (min-width: 0px) {
+    .gallery-content h1 {
+        font-size: 2rem;
+    }
     .gallery {
         column-count: 2;
     }
