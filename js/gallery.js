@@ -3,50 +3,22 @@ $(document).ready(function() {
     gsap.registerPlugin(ScrollTrigger);
 
     async function getImagesFromCloudinary() {
-        // const cloudName = "truetalkerchatapp";
-        // const folder = "EV-PINPOINT";
-        // const apiKey = "629345187586577";
-        // const apiSecret = "uVUjbiYwjnuGWWI3zUQ3zc45wX0";
-    
-        // // In a secure environment, you would generate a signature using your API secret.
-        // // This example skips that step because it should be done server-side for security reasons.
-    
-        // const timestamp = Math.floor(Date.now() / 1000);
-    
-        // const url = `https://api.cloudinary.com/v1_1/${cloudName}/resources/image?prefix=${folder}/&api_key=${apiKey}&timestamp=${timestamp}`;
-    
-        // try {
-        //     const response = await fetch(url, {
-        //         method: 'GET',
-        //         headers: {
-        //             'Authorization': 'Basic ' + btoa(apiKey + ':' + apiSecret),
-        //         },
-        //     });
-    
-        //     if (!response.ok) {
-        //         throw new Error(`Error fetching images: ${response.statusText}`);
-        //     }
-    
-        //     const data = await response.json();
-        //     return data.resources.map(resource => resource.secure_url);
-        // } catch (error) {
-        //     console.error('Error fetching images:', error);
-        // }
 
         let title = document.title.split(" - ")[1];
     
-        const res = await fetch("http://192.168.0.105:1254/?folderName=" + title, {
+        const res = await fetch("http://192.168.0.106:1254/?folderName=" + title, {
             method: 'GET'
         })
         const data= await res.json();
         console.log(data);
         return data.imageUrls;
+        // return null;
     }
 
     getImagesFromCloudinary().then(images => {
         console.log('Images:', images);
         images.forEach((item, index) => {
-            $("#gallery-container").append(`<div class="gallery-img-container"><img class="gallery-image" src='${item}' alt='image' /></div>`)
+          $('.gallery').append(`<div class='mask'><figure class="gallery-image"><img src="${modifyImageUrl(item)}" alt='image'></figure></div>`);
         })
 
         const options = {
@@ -98,3 +70,14 @@ $(document).ready(function() {
     });
 
 });
+
+function modifyImageUrl(url) {
+  let imageOptions = 'f_auto,q_auto';
+  let urlParts = url.split('/');
+
+  // Insert the data at the appropriate position
+  urlParts.splice(6, 0, imageOptions);
+
+  // Join the parts back into a full URL
+ return urlParts.join('/');
+}

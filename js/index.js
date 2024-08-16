@@ -11,6 +11,8 @@ Pace.on("done", function () {
         .animate({ top: "-120%" }, 3800, $.bez([0.19, 1, 0.22, 1]));
 });
 
+let fadeAnimationArray = [];
+
 $(window).on("load", function () {
     $(function () {
         //slideshow
@@ -203,34 +205,8 @@ $(window).on("load", function () {
             });
 
             myMap();
-            let tl = gsap.timeline({
-                // ease: "none",
-                scrollTrigger: {
-                    trigger: ".contact-us",
-                    start: "top center",
-                    end: "+=400",
-                    toggleActions: "restart complete none reset",
-                    scrub: true
-                },
-            });
-    
-            // tl.set(container, { autoAlpha: 0 });
-            // tl.from(panel, 1.5, {
-            //     // scrollTrigger: panel,
-            //     // xPercent: -100,
-            //     ease: Power2.out
-            // })
-            tl.from("#googleMap", 2, {
-                opacity: 0,
-                x: -100,
-                ease: Power2.out,
-            });
-
-            tl.from("#myForm", 2, {
-                opacity: 0,
-                x: 100,
-                ease: Power2.out,
-            });
+            // window.addEventListener("resize", fadeScrollEffect);
+            fadeScrollEffect();
         });
         //parallax over
 
@@ -469,6 +445,41 @@ function scrollToParticularElement(element, isFromBurgerMenu) {
     $('html, body').animate({
         scrollTop: $(element).offset().top
     }, 1200);
+}
+
+async function fadeScrollEffect() {
+    registerFadeScrollEffect("#googleMap", "right", 2);
+    registerFadeScrollEffect("#myForm", "left", 2);
+    registerFadeScrollEffect(".about-us>h1", "top", 2);
+    registerFadeScrollEffect(".member-image-container.m1", "right", 2);
+    registerFadeScrollEffect(".member-content.m1", "left", 2);
+    registerFadeScrollEffect(".member-image-container.m2", "left", 2);
+    registerFadeScrollEffect(".member-content.m2", "right", 2);
+    registerFadeScrollEffect(".member-image-container.m3", "right", 2);
+    registerFadeScrollEffect(".member-content.m3", "left", 2);
+    registerFadeScrollEffect(".contact-header>h3", "top", 2);
+}
+
+function registerFadeScrollEffect(element, direction, delay) {
+    let x = y = 0;
+    if (direction == "right" || direction == "left") {
+        x = direction == "right" ? -100 : 100
+    }
+    if (direction == "top" || direction == "bottom") {
+        y = direction == "top" ? -100 : 100
+    }
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: element,
+            end: "+=400",
+            scrub: true
+        },
+    }).from(element, delay, {
+        opacity: 0,
+        x: x,
+        y: y,
+        ease: Power2.out,
+    });
 }
 
 function initCategoryOverlayEffect() {

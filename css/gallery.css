@@ -14,27 +14,19 @@ h1 {
     color: black;
 }
 
-.gallery {
-    display: grid;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    min-height: 100vh;
-    height: auto;
-    margin: 0 auto;
-    margin-bottom: 10%;
-    background-color: white;
-}
-
-.img_container {
-    margin: 20% 0 0 10%;
-    width: 80%;
+.gallery-image {
     position: relative;
+    > img {
+        width: 400px;
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
 }
 
-.flex-column {
-    width: auto;
-    max-width: 260px;
-    margin: 0px;
+.gallery {
+    padding: 0 5%;
+    column-count: 4;
 }
 
 .container-fluid {
@@ -49,24 +41,7 @@ h1 {
     justify-content: center;
     align-items: center;
     width: fit-content;
-    margin: 2px;
-    /* height: 100%; */
     overflow: hidden;
-    > .gallery-image {
-        height: 100%;
-        width: 100%;
-        transform-origin: left;
-        object-fit: cover;
-    }
-}
-
-.mask > .gallery-image {
-    margin: 5px;
-}
-
-.scale {
-    transform: scaleY(1.05);
-    padding-top: 5px; 
 }
 
 /*
@@ -74,14 +49,24 @@ h1 {
 FOR MOBILES
 
 */
+@media all and (max-width: 991px) and (min-width: 750px) {
+    .gallery {
+        column-count: 4;
+    }
+}
+@media all and (max-width: 750px) and (min-width: 576px) {
+    .gallery {
+        column-count: 3;
+    }
+}
 @media all and (max-width: 576px) and (min-width: 375px) {
-    .flex-column {
-        width: 170px;
+    .gallery {
+        column-count: 2;
     }
 }
 
 @media all and (max-width: 375px) and (min-width: 0px) {
-    .flex-column {
-        width: 150px;
+    .gallery {
+        column-count: 2;
     }
 }
