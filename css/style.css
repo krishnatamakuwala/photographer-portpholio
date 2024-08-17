@@ -813,7 +813,7 @@ li {
   transform: translate(-50%, -50%);
 } */
 .slider-control-image {
-  height: 50px;
+  height: 30px;
 }
 /* .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: rgb(245, 245, 245);
@@ -1472,6 +1472,18 @@ footer img {
   margin-bottom: 20px;
 }
 
+.control.left {
+  margin-left: 20px;
+  position: absolute;
+  left: 0%;
+}
+.control.right {
+  margin-right: 20px;
+  position: absolute;
+  right: 0%;
+}
+
+
 
 @keyframes mouse {
   0% {
@@ -1576,7 +1588,7 @@ FOR MOBILES
     padding-right: 40px;
   }
   .slider-control-image {
-    height: 30px;
+    height: 20px;
   }
   .slide-text {
     font-size: 70px;
@@ -1702,6 +1714,12 @@ FOR MOBILES
   .gg-mouse {
     display: none;
   }
+  .control.left {
+    margin-left: 0;
+  }
+  .control.right {
+    margin-right: 0;
+  }
 }
 /*
 FOR EXTRA SMALL DEVICES
@@ -1739,7 +1757,7 @@ FOR EXTRA SMALL DEVICES
     flex-direction: column;
   }
   .slider-control-image {
-    height: 30px;
+    height: 20px;
   }
   .member-card {
     width: 100%;
@@ -1959,6 +1977,12 @@ FOR EXTRA SMALL DEVICES
   .gg-mouse {
     display: none;
   }
+  .control.left {
+    margin-left: 0;
+  }
+  .control.right {
+    margin-right: 0;
+  }
 }
 
 @media all and (max-width: 750px) and (min-width: 576px) {
@@ -2170,14 +2194,4 @@ FOR TABLETS
     border-radius: 6px;
   }
 }
-
-.control.left {
-  position: absolute;
-  left: 0%;
-}
-.control.right {
-  position: absolute;
-  right: 0%;
-}
-
 
