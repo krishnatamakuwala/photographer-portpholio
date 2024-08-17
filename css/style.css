@@ -1,24 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"); */
-/* @import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap"); */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
 @font-face {
-  font-family: "Belirium";
-  src: url("fonts/BeliriumDemoRegular.ttf");
-  /* font-weight: normal;
-  font-style: normal; */
+  font-family: "Sofia-Pro";
+  src: url("fonts/SofiaProSemiBoldAz.otf");
 }
 @font-face {
-  font-family: "Quichesans";
-  src: url("fonts/Fontspring-DEMO-quichesans-regular.otf");
-  /* font-weight: normal;
-  font-style: normal; */
-}
-@font-face {
-  font-family: "QuicheFine";
-  src: url("fonts/QuicheFine-Regular.ttf");
-  /* font-weight: normal;
-  font-style: normal; */
+  font-family: "Karla";
+  src: url("fonts/Karla-Regular.ttf");
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -34,6 +21,17 @@ input[type="number"] {
   appearance: textfield;
 }
 
+:root {
+  --primary-background-color: #FFFFFF;
+  --secondary-background-color: #F5F6F1;
+  --primary-action-color: #86A8AA;
+  --secondary-action-color: #DADDCC;
+  --primary-text-color: #2F3126;
+
+  --header-font: "Sofia-Pro", sans-serif;
+  --regular-font: "Karla", sans-serif;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -42,7 +40,7 @@ input[type="number"] {
 body {
   user-select: none;
   background: #050505;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--regular-font);
 }
 html {
   background: #050505;
@@ -76,15 +74,14 @@ html {
 }
 
 .parallax-slider .img-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background-position: center;
-  background-size: cover;
-  /* filter: grayscale(10); */
+  /* position: absolute; */
+}
+
+.img-container img {
+  height: 100%;
+    width: 100vw;
+    /* object-fit: contain; */
+    object-fit: cover;
 }
 
 .testimonial-slider-container .testimonial-content {
@@ -111,19 +108,30 @@ section {
   max-width: 100vw; */
   height: 100vh;
   width: 100%;
+  background-color: white;
+}
+
+div.landing-page {
+  position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    aspect-ratio: 3/2;
 }
 
 section.two {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(120, 166, 252);
   /*   opacity: 0.5; */
+}
+
+section.description {
+  background-color: white;
 }
 
 section.three {
   /* height: 120vh; */
-  background-color: rgb(255, 255, 255);
   > .testimonial-container {
     overflow: hidden;
     position: absolute;
@@ -415,7 +423,12 @@ section.category {
 }
 
 .container-fluid {
+  position: relative;
+}
+
+.fixed-to-bottom {
   position: fixed;
+  bottom: 0;
 }
 
 .category-image-container {
@@ -467,7 +480,7 @@ h5 {
 
 .swiper-pagination-container {
   position: absolute;
-  bottom: 7%;
+  bottom: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -546,7 +559,7 @@ h5 {
 }
 
 .parallax-slider {
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -555,28 +568,6 @@ h5 {
   width: 100%;
 }
 
-.parallax-slider .img-container.one {
-  background: url(../images/DSC07162.jpg);
-  background-position: center;
-  background-size: cover;
-}
-
-.parallax-slider .img-container.two {
-  background: url(../images/DSC07394.jpg);
-  background-position: center;
-  background-size: cover;
-}
-
-.parallax-slider .img-container.three {
-  background: url(../images/IMG_8413_.jpg);
-  background-position: center;
-  background-size: cover;
-}
-.parallax-slider .img-container.four {
-  background: url(../images/09.jpg);
-  background-position: center;
-  background-size: cover;
-}
 .navigation {
   display: flex;
   align-items: center;
@@ -1514,9 +1505,34 @@ footer img {
 FOR MOBILES
 
 */
+@media all and (max-width: 1160px) and (min-width: 0px) {
+  .container-fluid {
+    position: fixed;
+  }
+}
+
 @media all and (max-width: 576px) and (min-width: 375px) {
   .p {
     font-size: 20px;
+  }
+  .parallax-slider .img-container {
+    position: relative;
+  }
+  div.landing-page {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    aspect-ratio: 3/2;
+  }
+  .img-container img {
+    height: 100%;
+    width: 100vw;
+    /* object-fit: contain; */
+    object-fit: cover;
+  }
+  .parallax-slider {
+    height: 100%;
   }
   section.three {
     > .testimonial-container {
@@ -1733,6 +1749,25 @@ FOR EXTRA SMALL DEVICES
 @media all and (max-width: 375px) and (min-width: 0px) {
   .p {
     font-size: 20px;
+  }
+  .parallax-slider .img-container {
+    position: relative;
+  }
+  div.landing-page {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    aspect-ratio: 3/2;
+  }
+  .img-container img {
+    height: 100%;
+    width: 100vw;
+    /* object-fit: contain; */
+    object-fit: cover;
+  }
+  .parallax-slider {
+    height: 100%;
   }
   section.three {
     > .testimonial-container {

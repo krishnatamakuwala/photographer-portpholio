@@ -32,6 +32,7 @@ $(window).on("load", function () {
         $(document).ready(function () {
             gsap.registerPlugin(ScrollTrigger);
             initCategoryOverlayEffect();
+            fixLandingPageForSmallDisplay();
             var parallaxSlider;
             var testimonialImageSlider;
             var testimonialContentSlider;
@@ -52,7 +53,7 @@ $(window).on("load", function () {
                         let swiper = this;
                         for (let i = 0; i < swiper.slides.length; i++) {
                             $(swiper.slides[i])
-                                .find(".img-container")
+                                .find(".img-container>img")
                                 .attr({
                                 "data-swiper-parallax": 0.75 * swiper.width,
                                 });
@@ -160,6 +161,7 @@ $(window).on("load", function () {
             testimonialImageSlider = new Swiper("#testimonial-container-left", testimonialImageSliderOptions);
             // testimonialSlider = new Swiper("#testimonial-swiper", testimonialSliderOptions);
             $(window).on("resize", function () {
+                fixLandingPageForSmallDisplay();
                 testimonialImageSlider.destroy();
                 testimonialContentSlider.destroy();
                 parallaxSlider.destroy();
@@ -411,33 +413,6 @@ $(window).on("load", function () {
     });
 });
 
-// window.onscroll = function () {
-//   scrollFunction();
-// };
-
-function scrollFunction() {
-    if (
-            document.body.scrollTop > 700 ||
-            document.documentElement.scrollTop > 700
-    ) {
-            // console.log("scroll bottom");
-            document.getElementsByClassName("navigation")[0].classList.add("scroll");
-            // document.getElementsByClassName("logo")[0].classList.remove("center");
-            // document
-            //   .getElementsByClassName("navigation-links")[0]
-            //   .classList.remove("hide");
-            // document.getElementById("logo").style.fontSize = "25px";
-    } else {
-        // console.log("scroll top");
-        document.getElementsByClassName("navigation")[0].classList.remove("scroll");
-        // document.getElementsByClassName("logo")[0].classList.add("center");
-        // document
-        //   .getElementsByClassName("navigation-links")[0]
-        //   .classList.add("hide");
-        // document.getElementById("logo").style.fontSize = "35px";
-    }
-}
-
 function scrollToParticularElement(element, isFromBurgerMenu) {
     if (isFromBurgerMenu) {
         $(".burger-menu-icon").prop('checked', false);
@@ -552,7 +527,41 @@ window.onscroll = function () {
         document.getElementsByClassName("navigation")[0].style.top = "-80px";
     }
     prevScrollpos = currentScrollPos;
+
+    // scroll to fixed height in landing page
+    // if (currentScrollPos >= $(".landing-page").height()) {
+    //     $(".landing-page .container-fluid").css({position: 'fixed'});
+    // } else {
+    //     $(".landing-page .container-fluid").css({position: 'relative'});
+    // }
+
+    if (!window.matchMedia("(max-width: 1160px) and (min-width: 0px)").matches) {
+        var scrollableDiv = $('.landing-page');
+        var divHeight = scrollableDiv.outerHeight();
+        var viewportBottom = $(window).scrollTop() + $(window).height();
+
+        // Check if the bottom of the div has reached the bottom of the viewport
+        if (divHeight <= viewportBottom) {
+            // Add the 'fixed' class to make the div stick to the viewport
+            $(".landing-page .container-fluid").addClass('fixed-to-bottom');
+        } else {
+            // Remove the 'fixed' class if it's not at the viewport end
+            $(".landing-page .container-fluid").removeClass('fixed-to-bottom');
+        }
+    } else {
+        $(".landing-page .container-fluid").removeClass('fixed-to-bottom');
+    }
 };
+
+function fixLandingPageForSmallDisplay() {
+    // if (window.matchMedia("(max-width: 1160px) and (min-width: 0px)").matches) {
+    //     console.log(1);
+    //     $(".landing-page .container-fluid").css({position: 'fixed'});
+    // } else {
+    //     console.log(2);
+    //     $(".landing-page .container-fluid").css({position: 'relative'});
+    // }
+}
 
 function myMap() {
     var mapProp= {
