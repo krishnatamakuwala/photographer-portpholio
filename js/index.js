@@ -207,7 +207,7 @@ $(window).on("load", function () {
                 onSubmitContactUsForm();
             });
 
-            myMap();
+            // myMap();
             // window.addEventListener("resize", fadeScrollEffect);
             fadeScrollEffect();
 
@@ -445,8 +445,8 @@ function scrollToParticularElement(element, isFromBurgerMenu) {
 }
 
 async function fadeScrollEffect() {
-    registerFadeScrollEffect("#googleMap", "right", 2);
-    registerFadeScrollEffect("#myForm", "left", 2);
+    // registerFadeScrollEffect("#googleMap", "right", 2);
+    // registerFadeScrollEffect("#myForm", "left", 2);
     registerFadeScrollEffect(".about-us>h1", "top", 2);
     registerFadeScrollEffect(".member-image-container.m1", "right", 2);
     registerFadeScrollEffect(".member-content.m1", "left", 2);
@@ -454,8 +454,8 @@ async function fadeScrollEffect() {
     registerFadeScrollEffect(".member-content.m2", "right", 2);
     registerFadeScrollEffect(".member-image-container.m3", "right", 2);
     registerFadeScrollEffect(".member-content.m3", "left", 2);
-    registerFadeScrollEffect(".contact-header>h3", "top", 2);
-    registerFadeScrollEffect(".contact-description>p", "top", 2);
+    // registerFadeScrollEffect(".contact-header>h3", "top", 2);
+    // registerFadeScrollEffect(".contact-description>p", "top", 2);
 }
 
 function registerFadeScrollEffect(element, direction, delay) {
@@ -482,24 +482,22 @@ function registerFadeScrollEffect(element, direction, delay) {
 
 function initCategoryOverlayEffect() {
     let categoryPanels = gsap.utils.toArray(".category");
-    // console.log(categoryPanels);
-    // let tops = categoryPanels.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
     categoryPanels.forEach((panel, i) => {
         // let image = panel.querySelector("img");
-        ScrollTrigger.create({
-            trigger: panel,
-            start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
-            // start: "top top",
-            pin: true,
-            pinSpacing: false,
-            // scrub: true,
-            // markers: true,
-            onEnter: () => {
-                // debugger;
-                // console.log("entered: ");
-                // gsap.from(image.id, 0.5, { scale: 1.3, delay: 1.1 });
-            }
-        });
+        // ScrollTrigger.create({
+        //     trigger: panel,
+        //     // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        //     start: "top top",
+        //     pin: true,
+        //     pinSpacing: false,
+        //     scrub: true,
+        //     // markers: true,
+        //     onEnter: () => {
+        //         // debugger;
+        //         // console.log("entered: ");
+        //         // gsap.from(image.id, 0.5, { scale: 1.3, delay: 1.1 });
+        //     }
+        // });
 
         let image = panel.querySelector(".overlay-img");
         // let h1 = panel.querySelector("h1");
@@ -509,32 +507,20 @@ function initCategoryOverlayEffect() {
                 trigger: panel,
                 // toggleActions: "restart none none reset",
                 start: "top top",
+                scrub: true,
+                // end: "bottom",
                 // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
-                // pin: true,
+                pin: panel,
                 // pinSpacing: false,
                 // start: "top top",
                 // markers: true,
-                toggleActions: "restart complete none reset",
-                // scrub: true
+                toggleActions: "restart complete none reset"
             },
         });
-
-        // tl.set(container, { autoAlpha: 0 });
-        // tl.from(panel, 1.5, {
-        //     // scrollTrigger: panel,
-        //     // xPercent: -100,
-        //     ease: Power2.out
-        // })
         tl.from(image, 0.5, {
-            // scrollTrigger: panel,
-            // xPercent: 100,
             scale: 1.3,
-            // delay: -1.5,
             ease: Power2.out
         });
-        // console.log(tl.duration());
-        // console.log('*', tl);
-        // console.log('***', tl.scrollTrigger);
     });
     ScrollTrigger.refresh();
     // GSDevTools.create();
@@ -551,15 +537,6 @@ window.onscroll = function () {
     prevScrollpos = currentScrollPos;
 };
 
-function myMap() {
-    var mapProp= {
-      center:new google.maps.LatLng(21.1414806,72.7776534),
-      zoom:15,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    var marker = new google.maps.Marker({position: new google.maps.LatLng(21.1414806,72.7776534)});
-    marker.setMap(map);
-  }
 
 function onSubmitContactUsForm() {
     let isNameValid = false, isContactNumberValid = false, isEmailValid = false, isSubjectValid = false, isMessageValid = false;
@@ -571,48 +548,59 @@ function onSubmitContactUsForm() {
 
     if (/<\/?[a-z][\s\S]*>/i.test(name.val()) || name.val() === '' || name.val() === undefined) {
         $("#err-" + name.attr('id')).html("Invalid name!");
+        $("#err-" + name.attr('id')).removeClass("hide");
         $("#" + name.attr('id')).addClass("error-input");
     } else {
         $("#err-" + name.attr('id')).html("");
+        $("#err-" + name.attr('id')).addClass("hide");
         $("#" + name.attr('id')).removeClass("error-input");
         isNameValid = true;
     }
 
     if (/<\/?[a-z][\s\S]*>/i.test(contactnumber.val()) || contactnumber.val() === '' || contactnumber.val() === undefined || contactnumber.val().length != 10) {
         $("#err-" + contactnumber.attr('id')).html("Invalid contact number!");
+        $("#err-" + contactnumber.attr('id')).removeClass("hide");
         $("#" + contactnumber.attr('id')).addClass("error-input");
     } else {
         $("#err-" + contactnumber.attr('id')).html("");
+        $("#err-" + contactnumber.attr('id')).addClass("hide");
         $("#" + contactnumber.attr('id')).removeClass("error-input");
         isContactNumberValid = true;
     }
 
     if (email.val() === '' || email.val() === undefined || !(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(email.val()))) {
         $("#err-" + email.attr('id')).html("Invalid email!");
+        $("#err-" + email.attr('id')).removeClass("hide");
         $("#" + email.attr('id')).addClass("error-input");
     } else {
         $("#err-" + email.attr('id')).html("");
+        $("#err-" + email.attr('id')).addClass("hide");
         $("#" + email.attr('id')).removeClass("error-input");
         isEmailValid = true;
     }
 
     if (/<\/?[a-z][\s\S]*>/i.test(subject.val()) || subject.val() === '' || subject.val() === undefined) {
         $("#err-" + subject.attr('id')).html("Invalid subject!");
+        $("#err-" + subject.attr('id')).removeClass("hide");
         $("#" + subject.attr('id')).addClass("error-input");
     } else {
         $("#err-" + subject.attr('id')).html("");
+        $("#err-" + subject.attr('id')).addClass("hide");
         $("#" + subject.attr('id')).removeClass("error-input");
         isSubjectValid = true;
     }
 
     if (/<\/?[a-z][\s\S]*>/i.test(message.val()) || message.val() === '' || message.val() === undefined) {
         $("#err-" + message.attr('id')).html("Invalid message!");
+        $("#err-" + message.attr('id')).removeClass("hide");
         $("#" + message.attr('id')).addClass("error-input");
     } else if (message.val().length > 250) {
         $("#err-" + message.attr('id')).html("Message exceeds limit of 250 character!");
+        $("#err-" + message.attr('id')).removeClass("hide");
         $("#" + message.attr('id')).addClass("error-input");
     } else {
         $("#err-" + message.attr('id')).html("");
+        $("#err-" + message.attr('id')).addClass("hide");
         $("#" + message.attr('id')).removeClass("error-input");
         isMessageValid = true;
     }

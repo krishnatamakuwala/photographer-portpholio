@@ -22,8 +22,8 @@ input[type="number"] {
 }
 
 :root {
-  --primary-background-color: #FFFFFF;
-  --secondary-background-color: #F5F6F1;
+  --primary-background-color: #F4F4F4;
+  --secondary-background-color: #FFFFFF;
   --primary-action-color: #86A8AA;
   --secondary-action-color: #DADDCC;
   --primary-text-color: #2F3126;
@@ -44,6 +44,10 @@ body {
 }
 html {
   background: #050505;
+}
+p {
+  text-align: justify;
+  font-size: 15px;
 }
 #home {
   width: 100%;
@@ -112,7 +116,7 @@ section {
   max-width: 100vw; */
   height: 100vh;
   width: 100%;
-  background-color: white;
+  background-color: var(--primary-background-color);
 }
 
 div.landing-page {
@@ -134,7 +138,7 @@ section.description {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: var(--primary-background-color);
   padding: 5% 5%;
   height: auto;
 }
@@ -310,7 +314,7 @@ blockquote:after {
 
 section.about-us {
   overflow-x: hidden;
-  background-color: white;
+  background-color: var(--secondary-background-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -389,27 +393,40 @@ section.about-us {
 }
 
 section.contact-us {
-  background-color: white;
+  background-color: var(--primary-background-color);
   height: 100%;
 }
 
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.details-heading {
+  font-size: 16px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
 .google-map-container {
-  width: 45%;
-  margin-right: 10%;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  width: 50%;
+  /* margin-left: 10%; */
+  /* margin-top: 10px; */
+  /* margin-bottom: 20px; */
   overflow: hidden;
 }
 
 #googleMap {
-  border: 1px solid #484848;
+  /* border: 1px solid #484848; */
   width: 100%;
   height: 100%;
+  border-radius: 0 15px 15px 0;
 }
 
 .form-fields {
   overflow: hidden;
-  width: 45%;
+  width: 50%;
 }
 
 .form-container {
@@ -422,25 +439,26 @@ section.contact-us {
 .contact-description {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.contact-description p {
-  width: 84%;
-}
-
 .form-data-container {
+  border-radius: 15px;
+  background-color: var(--secondary-background-color);
   display: flex;
   width: 84%;
   height: auto;
   margin-bottom: 25px;
+  -webkit-box-shadow: 0px 21px 41px 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 21px 41px 1px rgba(0, 0, 0, 0.18);
 }
 
 .testimonials-bg-rect-design {
   height: 90%;
   width: 65%;
-  background-color: #cfcfcf;
+  background-color: var(--secondary-background-color);
   bottom: 0;
   right: 0;
   position: absolute;
@@ -631,7 +649,7 @@ h5 {
   padding-left: 40px; */
   font-size: 14px;
   width: 100%;
-  background-color: white;
+  background-color: var(--secondary-background-color);
   transition: top 0.3s;
   justify-content: space-between;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
@@ -640,7 +658,7 @@ h5 {
 /* ------------ */
 
 .navigation.scroll {
-  background-color: white;
+  background-color: var(--primary-background-color);
   color: black;
   position: fixed;
 }
@@ -1230,6 +1248,7 @@ li {
   width: 100%;
 }
 .form {
+  padding: 10%;
   min-height: 70vh;
   width: 100%;
   display: flex;
@@ -1250,10 +1269,10 @@ input {
   border: none;
   border-bottom: 1px solid rgb(83, 83, 83);
   outline: none;
-  padding: 10px 20px;
+  padding: 5px 2px;
   margin-bottom: 5px;
-  font-size: 18px;
-  width: 80%;
+  font-size: 14px;
+  /* width: 80%; */
   color: rgb(35, 35, 35);
   transition: all 0.2s ease;
 }
@@ -1266,9 +1285,9 @@ input {
   border-radius: 0px;
   border: none;
   border-bottom: 1px solid rgb(83, 83, 83);
-  padding: 10px 20px;
+  padding: 5px 2px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 14px;
   color: rgb(35, 35, 35);
   /* font-family: brook; */
   transition: all 0.2s ease;
@@ -1280,11 +1299,16 @@ input {
 
 .input-container {
   width: 100%;
-  padding: 10px;
+  padding: 8px 0;
   margin-bottom: 10px;
 }
 
+.input-container .hide {
+  display: none;
+}
+
 .error-input-text {
+  display: block;
   color: #ed4337;
 }
 
@@ -1571,6 +1595,9 @@ FOR MOBILES
   h3 {
     font-size: 1.25rem;
   }
+  p {
+    font-size: 14px;
+  }
   section.description .header {
     position: relative;
   }
@@ -1818,6 +1845,9 @@ FOR EXTRA SMALL DEVICES
   }
   h3 {
     font-size: 1.25rem;
+  }
+  p {
+    font-size: 14px;
   }
   section.description .header {
     position: relative;
@@ -2104,6 +2134,9 @@ FOR EXTRA SMALL DEVICES
 }
 
 @media all and (max-width: 750px) and (min-width: 576px) {
+  p {
+    font-size: 14px;
+  }
   section.description .header {
     position: relative;
   }
@@ -2249,6 +2282,9 @@ FOR TABLETS
 */
 
 @media all and (max-width: 991px) and (min-width: 750px) {
+  p {
+    font-size: 14px;
+  }
   .p {
     font-size: 20px;
   }
