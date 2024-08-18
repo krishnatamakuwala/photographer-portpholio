@@ -32,7 +32,7 @@ $(window).on("load", function () {
         $(document).ready(function () {
             gsap.registerPlugin(ScrollTrigger);
             initCategoryOverlayEffect();
-            fixLandingPageForSmallDisplay();
+            resizeLandingPageForSmallDisplay();
             var parallaxSlider;
             var testimonialImageSlider;
             var testimonialContentSlider;
@@ -161,7 +161,7 @@ $(window).on("load", function () {
             testimonialImageSlider = new Swiper("#testimonial-container-left", testimonialImageSliderOptions);
             // testimonialSlider = new Swiper("#testimonial-swiper", testimonialSliderOptions);
             $(window).on("resize", function () {
-                fixLandingPageForSmallDisplay();
+                resizeLandingPageForSmallDisplay();
                 testimonialImageSlider.destroy();
                 testimonialContentSlider.destroy();
                 parallaxSlider.destroy();
@@ -535,32 +535,43 @@ window.onscroll = function () {
     //     $(".landing-page .container-fluid").css({position: 'relative'});
     // }
 
-    if (!window.matchMedia("(max-width: 1160px) and (min-width: 0px)").matches) {
-        var scrollableDiv = $('.landing-page');
-        var divHeight = scrollableDiv.outerHeight();
-        var viewportBottom = $(window).scrollTop() + $(window).height();
+    // if (!window.matchMedia("(max-width: 1160px) and (min-width: 0px)").matches) {
+    //     var scrollableDiv = $('.landing-page');
+    //     var divHeight = scrollableDiv.outerHeight();
+    //     var viewportBottom = $(window).scrollTop() + $(window).height();
 
-        // Check if the bottom of the div has reached the bottom of the viewport
-        if (divHeight <= viewportBottom) {
-            // Add the 'fixed' class to make the div stick to the viewport
-            $(".landing-page .container-fluid").addClass('fixed-to-bottom');
-        } else {
-            // Remove the 'fixed' class if it's not at the viewport end
-            $(".landing-page .container-fluid").removeClass('fixed-to-bottom');
-        }
-    } else {
-        $(".landing-page .container-fluid").removeClass('fixed-to-bottom');
-    }
+    //     // Check if the bottom of the div has reached the bottom of the viewport
+    //     if (divHeight <= viewportBottom) {
+    //         // Add the 'fixed' class to make the div stick to the viewport
+    //         $(".landing-page .container-fluid").addClass('fixed-to-bottom');
+    //     } else {
+    //         // Remove the 'fixed' class if it's not at the viewport end
+    //         $(".landing-page .container-fluid").removeClass('fixed-to-bottom');
+    //     }
+    // } else {
+    //     $(".landing-page .container-fluid").removeClass('fixed-to-bottom');
+    // }
 };
 
-function fixLandingPageForSmallDisplay() {
-    // if (window.matchMedia("(max-width: 1160px) and (min-width: 0px)").matches) {
-    //     console.log(1);
-    //     $(".landing-page .container-fluid").css({position: 'fixed'});
-    // } else {
-    //     console.log(2);
-    //     $(".landing-page .container-fluid").css({position: 'relative'});
-    // }
+function resizeLandingPageForSmallDisplay() {
+    if (window.matchMedia("(min-width: 1028px)").matches) {
+        $(".img-container>img").toArray().map((x) => {
+            // debugger
+            let oldSrcArr = $(x).attr("src").split("/");
+            oldSrcArr[oldSrcArr.length - 1] = "new-" + oldSrcArr[oldSrcArr.length - 1];
+            let newSrc = oldSrcArr.join('/');
+            $(x).attr("src", newSrc);
+        });
+    } else {
+        $(".img-container>img").toArray().map((x) => {
+            if ($(x).attr("src").split("new-")[1] !== undefined)
+            {
+            let oldSrcArr = $(x).attr("src").split("/");
+            oldSrcArr[oldSrcArr.length - 1] = $(x).attr("src").split("new-")[1];
+            let newSrc = oldSrcArr.join('/');
+            $(x).attr("src", newSrc);}
+        });
+    }
 }
 
 function myMap() {
