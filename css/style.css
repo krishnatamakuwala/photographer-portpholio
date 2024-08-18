@@ -335,6 +335,10 @@ section.about-us {
   z-index: 10;
 }
 
+.member-container.m0 {
+  text-align: justify;
+}
+
 .member-image-container {
   width: 300px;
   height: 300px;
