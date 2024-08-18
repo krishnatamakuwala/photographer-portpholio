@@ -32,6 +32,7 @@ $(window).on("load", function () {
         $(document).ready(function () {
             gsap.registerPlugin(ScrollTrigger);
             initCategoryOverlayEffect();
+            let currentState = '';
             resizeLandingPageForSmallDisplay();
             var parallaxSlider;
             var testimonialImageSlider;
@@ -209,6 +210,27 @@ $(window).on("load", function () {
             myMap();
             // window.addEventListener("resize", fadeScrollEffect);
             fadeScrollEffect();
+
+            function resizeLandingPageForSmallDisplay() {
+                let newState = $(window).width() > 1028 ? 'above-1028px' : 'below-1028px';
+                let newSrcPrefix = '';
+                if (currentState === '' || newState !== currentState) {
+                    if (newState === 'above-1028px') {
+                        newSrcPrefix = "./images/new-header-";
+                    } else {
+                        newSrcPrefix = "./images/header-";
+                    }
+
+                    $(".img-container>img").toArray().map(x => {
+                        let oldSrcArr = $(x).attr("src").split("-");
+                        let newSrc = newSrcPrefix + oldSrcArr[oldSrcArr.length - 1];
+                        $(x).attr("src", newSrc);
+                    });
+              
+                    // Update the current state
+                    currentState = newState;
+                }
+            }
         });
         //parallax over
 
@@ -527,52 +549,7 @@ window.onscroll = function () {
         document.getElementsByClassName("navigation")[0].style.top = "-80px";
     }
     prevScrollpos = currentScrollPos;
-
-    // scroll to fixed height in landing page
-    // if (currentScrollPos >= $(".landing-page").height()) {
-    //     $(".landing-page .container-fluid").css({position: 'fixed'});
-    // } else {
-    //     $(".landing-page .container-fluid").css({position: 'relative'});
-    // }
-
-    // if (!window.matchMedia("(max-width: 1160px) and (min-width: 0px)").matches) {
-    //     var scrollableDiv = $('.landing-page');
-    //     var divHeight = scrollableDiv.outerHeight();
-    //     var viewportBottom = $(window).scrollTop() + $(window).height();
-
-    //     // Check if the bottom of the div has reached the bottom of the viewport
-    //     if (divHeight <= viewportBottom) {
-    //         // Add the 'fixed' class to make the div stick to the viewport
-    //         $(".landing-page .container-fluid").addClass('fixed-to-bottom');
-    //     } else {
-    //         // Remove the 'fixed' class if it's not at the viewport end
-    //         $(".landing-page .container-fluid").removeClass('fixed-to-bottom');
-    //     }
-    // } else {
-    //     $(".landing-page .container-fluid").removeClass('fixed-to-bottom');
-    // }
 };
-
-function resizeLandingPageForSmallDisplay() {
-    if (window.matchMedia("(min-width: 1028px)").matches) {
-        $(".img-container>img").toArray().map((x) => {
-            // debugger
-            let oldSrcArr = $(x).attr("src").split("/");
-            oldSrcArr[oldSrcArr.length - 1] = "new-" + oldSrcArr[oldSrcArr.length - 1];
-            let newSrc = oldSrcArr.join('/');
-            $(x).attr("src", newSrc);
-        });
-    } else {
-        $(".img-container>img").toArray().map((x) => {
-            if ($(x).attr("src").split("new-")[1] !== undefined)
-            {
-            let oldSrcArr = $(x).attr("src").split("/");
-            oldSrcArr[oldSrcArr.length - 1] = $(x).attr("src").split("new-")[1];
-            let newSrc = oldSrcArr.join('/');
-            $(x).attr("src", newSrc);}
-        });
-    }
-}
 
 function myMap() {
     var mapProp= {
