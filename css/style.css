@@ -127,7 +127,48 @@ section.two {
 }
 
 section.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
+  padding: 5% 5%;
+  height: auto;
+}
+
+section.description p {
+  text-align: justify;
+}
+
+section.description .header {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  margin-top: 0px;
+  text-align: center;
+  z-index: 12;
+}
+
+.fixed-margin-100 {
+  margin-top: 100px;
+}
+
+.description-image-cover {
+  position: relative;
+  width: 100%;
+}
+
+.description-image-cover img {
+  max-width: 100%;
+  height: auto;
+}
+
+.description-image-cover.cover-1 {
+  margin-top: 140px;
+}
+
+.description-image-cover.cover-2 {
+  /* margin-top: -50px; */
 }
 
 section.three {
@@ -1512,6 +1553,19 @@ FOR MOBILES
 }
 
 @media all and (max-width: 576px) and (min-width: 375px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  section.description .header {
+    position: relative;
+  }
+  .fixed-margin-100 {
+    margin-top: auto;
+  }
+  
   .p {
     font-size: 20px;
   }
@@ -1540,7 +1594,7 @@ FOR MOBILES
         > .left {
           width: 100%;
           > h1 {
-            font-size: 2.1rem;
+            /* font-size: 2.1rem; */
           }
         }
         > .right {
@@ -1747,6 +1801,18 @@ FOR EXTRA SMALL DEVICES
 */
 
 @media all and (max-width: 375px) and (min-width: 0px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  section.description .header {
+    position: relative;
+  }
+  .fixed-margin-100 {
+    margin-top: auto;
+  }
   .p {
     font-size: 20px;
   }
@@ -1775,7 +1841,7 @@ FOR EXTRA SMALL DEVICES
         > .left {
           width: 100%;
           > h1 {
-            font-size: 2.1rem;
+            /* font-size: 2.1rem; */
           }
         }
         > .right {
@@ -2026,13 +2092,19 @@ FOR EXTRA SMALL DEVICES
 }
 
 @media all and (max-width: 750px) and (min-width: 576px) {
+  section.description .header {
+    position: relative;
+  }
+  .fixed-margin-100 {
+    margin-top: auto;
+  }
   section.three {
     > .testimonial-container {
       > .title {
         > .left {
           width: 100%;
           > h1 {
-            font-size: 2.1rem;
+            /* font-size: 2.1rem; */
           }
         }
         > .right {
