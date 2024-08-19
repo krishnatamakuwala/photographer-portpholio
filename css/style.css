@@ -398,12 +398,15 @@ section.contact-us {
 }
 
 .contact-details {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
 }
 
 .details-heading {
+  font-weight: bold;
   font-size: 16px;
   margin-bottom: 2px;
   text-transform: uppercase;
@@ -444,6 +447,10 @@ section.contact-us {
   align-items: center;
 }
 
+.contact-description p {
+  width: 100%;
+}
+
 .form-data-container {
   border-radius: 15px;
   background-color: var(--secondary-background-color);
@@ -451,8 +458,8 @@ section.contact-us {
   width: 84%;
   height: auto;
   margin-bottom: 25px;
-  -webkit-box-shadow: 0px 21px 41px 1px rgba(0, 0, 0, 0.18);
-  box-shadow: 0px 21px 41px 1px rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 0px 21px 41px -25px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 21px 41px -25px rgba(0, 0, 0, 0.18);
 }
 
 .testimonials-bg-rect-design {
@@ -1773,6 +1780,9 @@ FOR MOBILES
   .form-data-container {
     flex-direction: column;
   }
+  #googleMap {
+    border-radius: 0 0 15px 15px;
+  }
   .google-map-container {
     height: 500px;
     width: 100%;
@@ -1930,6 +1940,9 @@ FOR EXTRA SMALL DEVICES
   .form-data-container {
     flex-direction: column;
   }
+  #googleMap {
+    border-radius: 0 0 15px 15px;
+  }
   .google-map-container {
     height: 500px;
     width: 100%;
@@ -2061,6 +2074,9 @@ FOR EXTRA SMALL DEVICES
   }
   .form-data-container {
     flex-direction: column;
+  }
+  #googleMap {
+    border-radius: 0 0 15px 15px;
   }
   .google-map-container {
     height: 500px;
@@ -2204,6 +2220,9 @@ FOR EXTRA SMALL DEVICES
   }
   .form-data-container {
     flex-direction: column;
+  }
+  #googleMap {
+    border-radius: 0 0 15px 15px;
   }
   .google-map-container {
     height: 500px;
