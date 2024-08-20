@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+  resetCoverHeight();
+  $(window).on("resize", function () {
+    resetCoverHeight();
+  });
     
     gsap.registerPlugin(ScrollTrigger);
 
@@ -100,6 +105,11 @@ $(document).ready(function() {
     });
 
 });
+
+function resetCoverHeight() {
+  $(".gallery-fixed-container").css({ top: $(".navigation").outerHeight() + 'px' });
+  $(".gallery-description-container").css({ top: $(".navigation").outerHeight() + 'px' });
+}
 
 function modifyImageUrl(url) {
   let imageOptions = 'f_auto,q_auto';

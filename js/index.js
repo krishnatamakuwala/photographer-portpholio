@@ -609,6 +609,6 @@ function onSubmitContactUsForm() {
         let whatsAppMessage = 
         `Hello,\r\nMy name is ${name.val()}. I want to enquire about ${subject.val()}.\r\n${message.val()}.\r\nYou can contact me on my email address ${email.val()} or contact number ${contactnumber.val()}.`
         let encodedWhatsAppMessage = encodeURI(whatsAppMessage);
-        window.open(`https://wa.me/919081301107?text=${encodedWhatsAppMessage}`, "_blank");
+        window.open(`https://wa.me/919099825258?text=${encodedWhatsAppMessage}`, "_blank");
     }
 }

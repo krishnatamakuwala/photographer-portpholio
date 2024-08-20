@@ -8,6 +8,8 @@ p {
 }
 
 .gallery-content {
+    color: white;
+    line-height: 1;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -21,8 +23,7 @@ p {
 }
 
 .gallery-content p {
-    margin-top: 10px;
-    text-align: justify;
+    text-align: center;
 }
 
 .gallery-image {
@@ -37,7 +38,6 @@ p {
 }
 
 .gallery {
-    padding: 0 5%;
     column-count: 4;
 }
 
@@ -68,7 +68,7 @@ p {
     min-height: 100vh;
     max-height: 100%;
     background-color: white;
-    padding: 80px 0;
+    padding: 30px;
     position: relative;
 }
 
