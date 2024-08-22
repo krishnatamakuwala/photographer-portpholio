@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
 @font-face {
   font-family: "Sofia-Pro";
   src: url("fonts/SofiaProSemiBoldAz.otf");
@@ -26,14 +29,14 @@ input[type="number"] {
 }
 
 :root {
-  --primary-background-color: #F4F4F4;
-  --secondary-background-color: #FFFFFF;
-  --primary-action-color: #86A8AA;
-  --secondary-action-color: #DADDCC;
-  --primary-text-color: #2F3126;
+  --primary-background-color: #f4f4f4;
+  --secondary-background-color: #ffffff;
+  --primary-action-color: #86a8aa;
+  --secondary-action-color: #daddcc;
+  --primary-text-color: #2f3126;
 
-  --header-font: "Antic Didone", sans-serif;
-  --regular-font: "Montserrat", sans-serif;
+  --header-font: "Baskervville", serif;
+  --regular-font: "Lora", serif;
 }
 
 * {
@@ -76,7 +79,7 @@ p {
 
 .home-link .logo-image {
   height: 32px;
-} 
+}
 
 .logo-image.white {
   filter: invert(100%) sepia(1%) saturate(4860%) hue-rotate(129deg)
@@ -99,9 +102,9 @@ p {
 
 .img-container img {
   height: 100vh;
-    width: 100vw;
-    /* object-fit: contain; */
-    object-fit: cover;
+  width: 100vw;
+  /* object-fit: contain; */
+  object-fit: cover;
 }
 
 .testimonial-slider-container .testimonial-content {
@@ -133,10 +136,10 @@ section {
 
 div.landing-page {
   position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    aspect-ratio: 3/2;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  aspect-ratio: 3/2;
 }
 
 section.two {
@@ -469,7 +472,8 @@ section.contact-us {
   align-items: center;
 }
 
-.contact-description-1, .contact-description-2 {
+.contact-description-1,
+.contact-description-2 {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -481,7 +485,8 @@ section.contact-us {
   margin-top: 75px;
 }
 
-.contact-description-1 p, .contact-description-2 p {
+.contact-description-1 p,
+.contact-description-2 p {
   width: 100%;
 }
 
@@ -1642,7 +1647,8 @@ FOR MOBILES
   h3 {
     font-size: 1.25rem;
   }
-  p, blockquote {
+  p,
+  blockquote {
     font-size: 14px;
   }
   section.description .header {
@@ -1652,7 +1658,7 @@ FOR MOBILES
   .fixed-margin-100 {
     margin-top: 5%;
   }
-  
+
   .p {
     font-size: 20px;
   }
@@ -1776,10 +1782,12 @@ FOR MOBILES
     height: auto;
     width: auto;
   }
-  .member-content, .member-content p {
+  .member-content,
+  .member-content p {
     text-align: center;
   }
-  .footer-links, .footer-links-header {
+  .footer-links,
+  .footer-links-header {
     text-align: center;
   }
   .contact-group {
@@ -1924,7 +1932,8 @@ FOR EXTRA SMALL DEVICES
   h3 {
     font-size: 1.25rem;
   }
-  p, blockquote {
+  p,
+  blockquote {
     font-size: 14px;
   }
   section.description .header {
@@ -2004,10 +2013,12 @@ FOR EXTRA SMALL DEVICES
   .member-card {
     width: 100%;
   }
-  .member-content, .member-content p {
+  .member-content,
+  .member-content p {
     text-align: center;
   }
-  .footer-links, .footer-links-header {
+  .footer-links,
+  .footer-links-header {
     text-align: center;
   }
   .contact-group {
@@ -2243,7 +2254,8 @@ FOR EXTRA SMALL DEVICES
 }
 
 @media all and (max-width: 750px) and (min-width: 576px) {
-  p, blockquote {
+  p,
+  blockquote {
     font-size: 14px;
   }
   section.description .header {
@@ -2289,7 +2301,8 @@ FOR EXTRA SMALL DEVICES
   .member-card {
     width: 33%;
   }
-  .member-content, .member-content p {
+  .member-content,
+  .member-content p {
     text-align: center;
   }
   .navigation-links {
@@ -2398,7 +2411,8 @@ FOR TABLETS
 */
 
 @media all and (max-width: 991px) and (min-width: 750px) {
-  p, blockquote {
+  p,
+  blockquote {
     font-size: 14px;
   }
   .p {
