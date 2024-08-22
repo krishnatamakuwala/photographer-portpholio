@@ -47,6 +47,7 @@ body {
   font-family: var(--regular-font);
 }
 h1 {
+  text-align: center;
   font-family: var(--header-font);
 }
 h5 {
@@ -370,8 +371,12 @@ section.about-us {
   overflow: hidden;
 }
 
-.member-content, .member-content p {
-  text-align: center;
+.member-content {
+  text-align: start;
+}
+
+.member-content p {
+  text-align: justify;
 }
 
 .member-card {
@@ -420,6 +425,14 @@ section.contact-us {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+.contact-details > div {
+  width: 100%;
+}
+
+.contact-details p {
+  word-wrap: break-word;
 }
 
 .details-heading {
@@ -1552,7 +1565,7 @@ footer img {
 
 .footer-links {
   margin-bottom: 5px;
-  width: fit-content;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -1562,6 +1575,7 @@ footer img {
 }
 
 .contact-group {
+  justify-content: flex-start;
   display: flex;
   align-items: center;
 }
@@ -1661,6 +1675,10 @@ FOR MOBILES
   .parallax-slider {
     height: 100%;
   }
+  .swiper-pagination-bullet {
+    height: 5px;
+    width: 5px;
+  }
   section.three {
     > .testimonial-container {
       > .title {
@@ -1757,6 +1775,15 @@ FOR MOBILES
   .member-image-container {
     height: auto;
     width: auto;
+  }
+  .member-content, .member-content p {
+    text-align: center;
+  }
+  .footer-links, .footer-links-header {
+    text-align: center;
+  }
+  .contact-group {
+    justify-content: center;
   }
   #about {
     background: url(../images/about-pic.webp);
@@ -1858,8 +1885,11 @@ FOR MOBILES
     align-items: center;
     > .col-center {
       width: 70%;
-      align-items: start;
+      align-items: center;
     }
+  }
+  .footer-links {
+    text-align: center;
   }
   .contact-group > .footer-social-icon {
     height: 18px;
@@ -1926,6 +1956,10 @@ FOR EXTRA SMALL DEVICES
   .parallax-slider {
     height: 100%;
   }
+  .swiper-pagination-bullet {
+    height: 5px;
+    width: 5px;
+  }
   section.three {
     > .testimonial-container {
       > .title {
@@ -1969,6 +2003,15 @@ FOR EXTRA SMALL DEVICES
   }
   .member-card {
     width: 100%;
+  }
+  .member-content, .member-content p {
+    text-align: center;
+  }
+  .footer-links, .footer-links-header {
+    text-align: center;
+  }
+  .contact-group {
+    justify-content: center;
   }
   .navigation-links {
     display: none;
@@ -2170,7 +2213,7 @@ FOR EXTRA SMALL DEVICES
     align-items: center;
     > .col-center {
       width: 70%;
-      align-items: start;
+      align-items: center;
     }
   }
   .contact-group > .footer-social-icon {
@@ -2245,6 +2288,9 @@ FOR EXTRA SMALL DEVICES
   }
   .member-card {
     width: 33%;
+  }
+  .member-content, .member-content p {
+    text-align: center;
   }
   .navigation-links {
     display: none;

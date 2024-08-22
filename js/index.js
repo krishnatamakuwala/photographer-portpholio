@@ -484,20 +484,20 @@ function initCategoryOverlayEffect() {
     let categoryPanels = gsap.utils.toArray(".category");
     categoryPanels.forEach((panel, i) => {
         // let image = panel.querySelector("img");
-        // ScrollTrigger.create({
-        //     trigger: panel,
-        //     // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
-        //     start: "top top",
-        //     pin: true,
-        //     pinSpacing: false,
-        //     scrub: true,
-        //     // markers: true,
-        //     onEnter: () => {
-        //         // debugger;
-        //         // console.log("entered: ");
-        //         // gsap.from(image.id, 0.5, { scale: 1.3, delay: 1.1 });
-        //     }
-        // });
+        ScrollTrigger.create({
+            trigger: panel,
+            // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+            start: "top top",
+            pin: true,
+            pinSpacing: false,
+            scrub: true,
+            // markers: true,
+            onEnter: () => {
+                // debugger;
+                // console.log("entered: ");
+                // gsap.from(image.id, 0.5, { scale: 1.3, delay: 1.1 });
+            }
+        });
 
         let image = panel.querySelector(".overlay-img");
         // let h1 = panel.querySelector("h1");
@@ -510,7 +510,7 @@ function initCategoryOverlayEffect() {
                 scrub: true,
                 // end: "bottom",
                 // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
-                pin: panel,
+                // pin: panel,
                 // pinSpacing: false,
                 // start: "top top",
                 // markers: true,
