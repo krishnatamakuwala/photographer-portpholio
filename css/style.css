@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/quote");
 
 @font-face {
   font-family: "Sofia-Pro";
@@ -29,7 +30,7 @@ input[type="number"] {
 }
 
 :root {
-  --primary-background-color: #f4f4f4;
+  --primary-background-color: #f6f7f2;
   --secondary-background-color: #ffffff;
   --primary-action-color: #86a8aa;
   --secondary-action-color: #daddcc;
@@ -37,6 +38,7 @@ input[type="number"] {
 
   --header-font: "Baskervville", serif;
   --regular-font: "Lora", serif;
+  --quote-font: "Quote", sans-serif;
 }
 
 * {
@@ -50,7 +52,13 @@ body {
   font-family: var(--regular-font);
 }
 h1 {
+  font-size: 2.3rem;
   text-align: center;
+  font-family: var(--header-font);
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.5rem;
   font-family: var(--header-font);
 }
 h5 {
@@ -69,6 +77,14 @@ p {
   height: 100vh;
   position: relative;
   /* overflow: hidden; */
+}
+.logo-video {
+  height: 576px;
+  width: 1024px;
+}
+.gallery-video {
+  height: 100%;
+  width: auto;
 }
 
 .logo-image {
@@ -309,6 +325,7 @@ section.three {
 blockquote {
   /* font-style: italic; */
   text-align: justify;
+  /* font-family: var(--quote-font); */
 }
 blockquote:before {
   content: open-quote;
@@ -586,7 +603,6 @@ h5 {
 }
 
 .category-label {
-  padding: 0 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1255,12 +1271,12 @@ li {
   margin-bottom: 100px;
   /* font-family: "Libre Bodoni", serif; */
   /* font-size: 50px; */
-  font-weight: 900;
+  /* font-weight: 900;
   letter-spacing: 1px;
   border-radius: 4px;
 
   font-size: 30px;
-  color: rgb(245, 245, 245);
+  color: rgb(245, 245, 245); */
 }
 #contact {
   min-height: 100vh;
@@ -1641,15 +1657,19 @@ FOR MOBILES
 }
 
 @media all and (max-width: 576px) and (min-width: 375px) {
+  .logo-video {
+    height: 180px;
+    width: 320px;
+  }
   h1 {
-    font-size: 2rem;
+    font-size: 1.58rem;
   }
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.28rem;
   }
   p,
   blockquote {
-    font-size: 14px;
+    font-size: 13px;
   }
   section.description .header {
     margin-bottom: -10%;
@@ -1660,7 +1680,7 @@ FOR MOBILES
   }
 
   .p {
-    font-size: 20px;
+    font-size: 13px;
   }
   .parallax-slider .img-container {
     position: relative;
@@ -1926,15 +1946,19 @@ FOR EXTRA SMALL DEVICES
 */
 
 @media all and (max-width: 375px) and (min-width: 0px) {
+  .logo-video {
+    height: 180px;
+    width: 320px;
+  }
   h1 {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
   p,
   blockquote {
-    font-size: 14px;
+    font-size: 12px;
   }
   section.description .header {
     margin-bottom: -10%;
@@ -1944,7 +1968,7 @@ FOR EXTRA SMALL DEVICES
     margin-top: 5%;
   }
   .p {
-    font-size: 20px;
+    font-size: 12px;
   }
   .parallax-slider .img-container {
     position: relative;
@@ -2254,6 +2278,16 @@ FOR EXTRA SMALL DEVICES
 }
 
 @media all and (max-width: 750px) and (min-width: 576px) {
+  .logo-video {
+    height: 422px;
+    width: 750px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
   p,
   blockquote {
     font-size: 14px;
@@ -2296,7 +2330,7 @@ FOR EXTRA SMALL DEVICES
     padding: 5px;
   }
   .p {
-    font-size: 20px;
+    font-size: 14px;
   }
   .member-card {
     width: 33%;
@@ -2411,12 +2445,22 @@ FOR TABLETS
 */
 
 @media all and (max-width: 991px) and (min-width: 750px) {
+  .logo-video {
+    height: 450px;
+    width: 800px;
+  }
+  h1 {
+    font-size: 2.3rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
   p,
   blockquote {
     font-size: 14px;
   }
   .p {
-    font-size: 20px;
+    font-size: 14px;
   }
   .member-card {
     width: 28%;
