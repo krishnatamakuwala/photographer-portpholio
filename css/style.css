@@ -165,7 +165,7 @@ section.two {
   /*   opacity: 0.5; */
 }
 
-section.description {
+section.description-container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,11 +174,11 @@ section.description {
   height: auto;
 }
 
-section.description p {
+section.description-containerp {
   text-align: justify;
 }
 
-section.description .header {
+section.description-container.header {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -1671,7 +1671,7 @@ FOR MOBILES
   blockquote {
     font-size: 13px;
   }
-  section.description .header {
+  section.description-container.header {
     margin-bottom: -10%;
     position: relative;
   }
@@ -1960,7 +1960,7 @@ FOR EXTRA SMALL DEVICES
   blockquote {
     font-size: 12px;
   }
-  section.description .header {
+  section.description-container.header {
     margin-bottom: -10%;
     position: relative;
   }
@@ -2292,7 +2292,7 @@ FOR EXTRA SMALL DEVICES
   blockquote {
     font-size: 14px;
   }
-  section.description .header {
+  section.description-container.header {
     margin-bottom: -10%;
     position: relative;
   }

@@ -242,9 +242,9 @@ $(window).on("load", function () {
         let newSrcPrefix = "";
         if (currentState === "" || newState !== currentState) {
           if (newState === "above-1028px") {
-            newSrcPrefix = "./images/new-header-";
+            newSrcPrefix = "./images/temp2/new-header-";
           } else {
-            newSrcPrefix = "./images/header-";
+            newSrcPrefix = "./images/temp2/header-";
           }
 
           $(".img-container>img")
@@ -515,48 +515,78 @@ function registerFadeScrollEffect(element, direction, delay) {
 
 function initCategoryOverlayEffect() {
   let categoryPanels = gsap.utils.toArray(".category");
-  categoryPanels.forEach((panel, i) => {
+  // categoryPanels.forEach((panel, i) => {
     // let image = panel.querySelector("img");
-    ScrollTrigger.create({
-      trigger: panel,
-      // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
-      start: "top top",
-      pin: true,
-      pinSpacing: false,
-      scrub: true,
-      // markers: true,
-      onEnter: () => {
-        // debugger;
-        // console.log("entered: ");
-        // gsap.from(image.id, 0.5, { scale: 1.3, delay: 1.1 });
-      },
+    // ScrollTrigger.create({
+    //   trigger: panel,
+    //   // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+    //   start: "top top",
+    //   pin: true,
+    //   pinSpacing: false,
+    //   scrub: true,
+    // });
+
+    
+    // // let h1 = panel.querySelector("h1");
+    // let tl = gsap.timeline({
+    //   // ease: "none",
+    //   scrollTrigger: {
+    //     trigger: panel,
+    //     // toggleActions: "restart none none reset",
+    //     start: "top top",
+    //     scrub: true,
+    //     // end: "bottom",
+    //     // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+    //     // pin: panel,
+    //     // pinSpacing: false,
+    //     // start: "top top",
+    //     // markers: true,
+    //     toggleActions: "restart complete none reset",
+    //   },
+    // });
+
+    let panels = gsap.utils.toArray(".category");
+    console.log(panels);
+    // we'll create a ScrollTrigger for each panel just to track when each panel's top hits the top of the viewport (we only need this for snapping)
+    let tops = panels.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
+
+    panels.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        pin: true, 
+        pinSpacing: false 
+      });
+
+      let image = panel.querySelector(".overlay-img");
+      let tl = gsap.timeline({
+        // ease: "none",
+        scrollTrigger: {
+          trigger: panel,
+          start: "top top",
+          scrub: true,
+          toggleActions: "restart complete none reset",
+        },
+      });
+      tl.from(image, 0.5, {
+        scale: 1.3,
+        ease: Power2.out,
+      });
     });
 
-    let image = panel.querySelector(".overlay-img");
-    // let h1 = panel.querySelector("h1");
-    let tl = gsap.timeline({
-      // ease: "none",
-      scrollTrigger: {
-        trigger: panel,
-        // toggleActions: "restart none none reset",
-        start: "top top",
-        scrub: true,
-        // end: "bottom",
-        // start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
-        // pin: panel,
-        // pinSpacing: false,
-        // start: "top top",
-        // markers: true,
-        toggleActions: "restart complete none reset",
+    ScrollTrigger.create({
+      snap: {
+        snapTo: (progress, self) => {
+          if (self.scroll() >= tops[0].start) {
+            let panelStarts = tops.map(st => st.start), // an Array of all the starting scroll positions. We do this on each scroll to make sure it's totally responsive. Starting positions may change when the user resizes the viewport
+                snapScroll = gsap.utils.snap(panelStarts, self.scroll()); // find the closest one
+            return gsap.utils.normalize(0, ScrollTrigger.maxScroll(window), snapScroll); // snapping requires a progress value, so convert the scroll position into a normalized progress value between 0 and 1
+          }
+        },
+        duration: 0.5
       },
+      end: panels[0].offsetTop
     });
-    tl.from(image, 0.5, {
-      scale: 1.3,
-      ease: Power2.out,
-    });
-  });
-  ScrollTrigger.refresh();
-  // GSDevTools.create();
 }
 
 var prevScrollpos = window.scrollY;
