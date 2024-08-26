@@ -14,6 +14,9 @@
 if (localStorage.getItem("reloadAnimationRequired") == 'false') {
   $("#preloader").css("top", "-120%");
   localStorage.removeItem("reloadAnimationRequired");
+  if (parseInt(localStorage.getItem("scrollPosition")) !== 0) {
+    $("html, body").animate({ scrollTop: parseInt(localStorage.getItem("scrollPosition")) + "px" });
+  }
 }
 
 var v = document.getElementById("Vid");
@@ -671,4 +674,8 @@ function onSubmitContactUsForm() {
       "_blank"
     );
   }
+}
+
+function preserveScrollPosition() {
+  localStorage.setItem("scrollPosition", document.documentElement.scrollTop);
 }
