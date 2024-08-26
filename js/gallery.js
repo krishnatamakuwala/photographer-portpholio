@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  if (localStorage.getItem("reloadAnimationRequired") === undefined || localStorage.getItem("reloadAnimationRequired") === null) {
+    localStorage.setItem("reloadAnimationRequired", false)
+  }
+
   resetCoverHeight();
   $(window).on("resize", function () {
     resetCoverHeight();
