@@ -20,18 +20,21 @@ if (localStorage.getItem("reloadAnimationRequired") == 'false') {
 }
 
 var v = document.getElementById("Vid");
-v.onended = function () {
+$("#Vid").attr("src", "./images/temp2/Main_1 - Trim.gif");
+
+setTimeout(() => {
+  $("#Vid").attr("src", "./images/temp2/Main_1 - Trim - last frame.jpg");
   $("#preloader")
-    .delay(0)
-    .animate({ top: "-120%" }, 3800, $.bez([0.19, 1, 0.22, 1]));
-};
+  .delay(0)
+  .animate({ top: "-120%" }, 3800, $.bez([0.19, 1, 0.22, 1]));
+}, 2090);
 
 let fadeAnimationArray = [];
 
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger)
   // gsap code here!
- });
+});
 
 $(window).on("load", function () {
   $(function () {
@@ -276,14 +279,14 @@ $(window).on("load", function () {
 
     // links-animations
     $(function () {
-      gsap.from(".opacity", 1, { opacity: 0, delay: 3 });
-      gsap.from(".scale", 1, { opacity: 0, delay: 3, scale: 0, stagger: 0.5 });
-      gsap.from(".fade-up", 1, {
-        y: 120,
-        opacity: 0,
-        delay: 1.5,
-        stagger: 0.25,
-      });
+      // gsap.from(".opacity", 1, { opacity: 0, delay: 3 });
+      // gsap.from(".scale", 1, { opacity: 0, delay: 3, scale: 0, stagger: 0.5 });
+      // gsap.from(".fade-up", 1, {
+      //   y: 120,
+      //   opacity: 0,
+      //   delay: 1.5,
+      //   stagger: 0.25,
+      // });
       gsap.from(".fade-down", 1, {
         y: -100,
         opacity: 0,
@@ -527,7 +530,6 @@ function registerFadeScrollEffect(element, direction, delay) {
 
 function initCategoryOverlayEffect() {
   let panels = gsap.utils.toArray(".category");
-  console.log(panels);
 
   panels.forEach((panel, i) => {
     ScrollTrigger.create({

@@ -110,6 +110,11 @@ html, body {
 	opacity: 0;
 }
 
+.back-icon {
+    height: 20px;
+    margin-right: 10px;
+}
+
 /*
 
 FOR MOBILES

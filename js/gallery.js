@@ -19,12 +19,10 @@ $(document).ready(function() {
             method: 'GET'
         })
         const data = await res.json();
-        console.log(data);
         return data.data;
     }
 
     getImagesFromCloudinary().then(images => {
-        console.log('Images:', images);
         images.forEach((item, index) => {
           $('.gallery').append(`<a class="image-popup-no-margins" href="${item}"><div class='mask'><figure class="gallery-image"><img src="${modifyImageUrl(item)}" alt="image"></figure></div></a>`);
         })
