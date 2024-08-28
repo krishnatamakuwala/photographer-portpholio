@@ -30,8 +30,26 @@
     <div id="all">
       <div id="preloader">
         <div class="p">
-          <img id="Vid" src="./images/temp2/Main_1 - Trim - last frame.jpg" class="logo-video">
-          </img>
+          <!-- <img id="Vid" src="./images/temp2/Main_1 - Trim - last frame.jpg" class="logo-video"> -->
+          <video
+              id="Vid"
+              class="logo-video"
+              preload="metadata"
+              autoplay="autoplay"
+              playsinline
+              muted="on"
+            >
+              <source src="./images/Main_1 - Trim.mp4" type="video/mp4" />
+            </video>
+            <img
+              id="Iid"
+              class="logo-video"
+              autoplay="autoplay"
+              preload="metadata"
+              playsinline
+              muted="on"
+              src="./images/Main_1 - Trim.mp4"
+            />
           <!-- <img src="images/acp-logo.svg" class="logo-image white" alt="Anil chauhan photography" srcset=""> -->
         </div>
       </div>

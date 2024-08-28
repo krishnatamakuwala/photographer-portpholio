@@ -11,28 +11,55 @@
 //     .animate({ top: "-120%" }, 3800, $.bez([0.19, 1, 0.22, 1]));
 // });
 
-if (localStorage.getItem("reloadAnimationRequired") == 'false') {
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+// if (isSafari) {
+//   document.getElementById("Vid").style.display = "none";
+// } else {
+//   document.getElementById("Iid").style.display = "none";
+// }
+
+if (sessionStorage.getItem("reloadAnimationRequired") == "false") {
   $("#preloader").css("top", "-120%");
-  localStorage.removeItem("reloadAnimationRequired");
-  if (parseInt(localStorage.getItem("scrollPosition")) !== 0) {
-    $("html, body").animate({ scrollTop: parseInt(localStorage.getItem("scrollPosition")) + "px" });
+  sessionStorage.removeItem("reloadAnimationRequired");
+  if (parseInt(sessionStorage.getItem("scrollPosition")) !== 0) {
+    $("html, body").animate({
+      scrollTop: parseInt(sessionStorage.getItem("scrollPosition")) + "px",
+    });
+    sessionStorage.removeItem("scrollPosition");
   }
 }
 
 var v = document.getElementById("Vid");
-$("#Vid").attr("src", "./images/temp2/Main_1 - Trim.gif");
+// $("#Vid").attr("src", "./images/temp2/Main_1 - Trim.gif");
 
-setTimeout(() => {
-  $("#Vid").attr("src", "./images/temp2/Main_1 - Trim - last frame.jpg");
-  $("#preloader")
-  .delay(0)
-  .animate({ top: "-120%" }, 3800, $.bez([0.19, 1, 0.22, 1]));
-}, 2090);
+if (isSafari) {
+  $("#Iid").attr("src", "./images/Main_1 - Trim.mp4");
+  document.getElementById("Vid").style.display = "none";
+  setTimeout(() => {
+    // $("#Vid").attr("src", "./images/temp2/Main_1 - Trim - last frame.jpg");
+    $("#preloader")
+      .delay(0)
+      .animate({ top: "-120%" }, 3800, $.bez([0.19, 1, 0.22, 1]));
+    $("#Iid").attr("src", "");
+    $("#Iid").css("display", "none");
+  }, 2550);
+} else {
+  $("#Vid").attr("src", "./images/Main_1 - Trim.mp4");
+  document.getElementById("Iid").style.display = "none";
+  v.onended = function () {
+    $("#preloader")
+      .delay(0)
+      .animate({ top: "-120%" }, 3800, $.bez([0.19, 1, 0.22, 1]));
+    $("#Vid").attr("src", "");
+    $("#Vid").css("display", "none");
+  };
+}
 
 let fadeAnimationArray = [];
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
   // gsap code here!
 });
 
@@ -535,8 +562,8 @@ function initCategoryOverlayEffect() {
     ScrollTrigger.create({
       trigger: panel,
       start: "top top", // if it's shorter than the viewport, we prefer to pin it at the top
-      pin: true, 
-      pinSpacing: false 
+      pin: true,
+      pinSpacing: false,
     });
 
     let image = panel.querySelector(".overlay-img");
@@ -679,5 +706,5 @@ function onSubmitContactUsForm() {
 }
 
 function preserveScrollPosition() {
-  localStorage.setItem("scrollPosition", document.documentElement.scrollTop);
+  sessionStorage.setItem("scrollPosition", document.documentElement.scrollTop);
 }

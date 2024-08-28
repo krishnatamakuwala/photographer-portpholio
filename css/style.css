@@ -161,12 +161,12 @@ section.two {
   /*   opacity: 0.5; */
 }
 
-section.description-container{
+section.description-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--primary-background-color);
-  padding: 10% 7%;
+  padding: 5% 7%;
   height: auto;
 }
 
@@ -218,7 +218,7 @@ section.three {
     /* justify-content: space-between; */
     height: 100%;
     width: 100%;
-    padding: 10% 7%;
+    padding: 5% 7%;
     > .title {
       margin-bottom: 5%;
       display: flex;
@@ -349,7 +349,7 @@ section.about-us {
   align-items: center;
   flex-direction: column;
   height: 100%;
-  padding: 10% 7%;
+  padding: 5% 7%;
   > h1 {
     z-index: 10;
   }
@@ -430,7 +430,7 @@ section.about-us {
 }
 
 section.contact-us {
-  padding: 30px 0;
+  padding: 5% 0%;
   background-color: var(--primary-background-color);
   height: 100%;
 }
@@ -1661,6 +1661,9 @@ FOR MOBILES
   blockquote {
     font-size: 13px;
   }
+  section.description-container {
+    padding: 10% 7%;
+  }
   section.description-container.header {
     margin-bottom: -10%;
     position: relative;
@@ -1697,6 +1700,7 @@ FOR MOBILES
   }
   section.three {
     > .testimonial-container {
+      padding: 10% 7%;
       > .title {
         > .left {
           width: 100%;
@@ -1850,6 +1854,13 @@ FOR MOBILES
     margin: auto;
     border-radius: 8px;
   }
+  section.about-us {
+    padding: 10% 7%;
+  }
+  section.contact-us {
+    padding: 10% 0%;
+  }
+
   .controls button {
     padding: 10px 10px;
     margin: 5px;
@@ -1950,6 +1961,9 @@ FOR EXTRA SMALL DEVICES
   blockquote {
     font-size: 12px;
   }
+  section.description-container {
+    padding: 10% 7%;
+  }
   section.description-container.header {
     margin-bottom: -10%;
     position: relative;
@@ -1985,6 +1999,7 @@ FOR EXTRA SMALL DEVICES
   }
   section.three {
     > .testimonial-container {
+      padding: 10% 7%;
       > .title {
         > .left {
           width: 100%;
@@ -2054,6 +2069,12 @@ FOR EXTRA SMALL DEVICES
   }
   .category-label-container {
     flex-direction: column;
+  }
+  section.about-us {
+    padding: 10% 7%;
+  }
+  section.contact-us {
+    padding: 10% 0%;
   }
   .form-data-container {
     flex-direction: column;
