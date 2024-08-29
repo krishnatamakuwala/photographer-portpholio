@@ -1,40 +1,11 @@
-//loader
-// paceOptions = {
-//   ajax: true,
-//   document: true,
-//   eventLag: false,
-// };
-
-// Pace.on("done", function () {
-//   $("#preloader")
-//     .delay(1500)
-//     .animate({ top: "-120%" }, 3800, $.bez([0.19, 1, 0.22, 1]));
-// });
-
 var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-// if (isSafari) {
-//   document.getElementById("Vid").style.display = "none";
-// } else {
-//   document.getElementById("Iid").style.display = "none";
-// }
-
-if (sessionStorage.getItem("reloadAnimationRequired") == "false") {
-  $("#preloader").css("top", "-120%");
-  sessionStorage.removeItem("reloadAnimationRequired");
-  if (parseInt(sessionStorage.getItem("scrollPosition")) !== 0) {
-    $("html, body").animate({
-      scrollTop: parseInt(sessionStorage.getItem("scrollPosition")) + "px",
-    });
-    sessionStorage.removeItem("scrollPosition");
-  }
-}
 
 var v = document.getElementById("Vid");
 // $("#Vid").attr("src", "./images/temp2/Main_1 - Trim.gif");
 
 if (isSafari) {
   $("#Iid").attr("src", "./images/Main_1 - Trim.mp4");
+  document.getElementById("Iid").style.display = "block";
   document.getElementById("Vid").style.display = "none";
   setTimeout(() => {
     // $("#Vid").attr("src", "./images/temp2/Main_1 - Trim - last frame.jpg");
@@ -46,6 +17,7 @@ if (isSafari) {
   }, 2550);
 } else {
   $("#Vid").attr("src", "./images/Main_1 - Trim.mp4");
+  document.getElementById("Vid").style.display = "block";
   document.getElementById("Iid").style.display = "none";
   v.onended = function () {
     $("#preloader")
@@ -54,6 +26,17 @@ if (isSafari) {
     $("#Vid").attr("src", "");
     $("#Vid").css("display", "none");
   };
+}
+
+if (sessionStorage.getItem("reloadAnimationRequired") == "false") {
+  $("#preloader").css("top", "-120%");
+  sessionStorage.removeItem("reloadAnimationRequired");
+  if (parseInt(sessionStorage.getItem("scrollPosition")) !== 0) {
+    $("html, body").animate({
+      scrollTop: parseInt(sessionStorage.getItem("scrollPosition")) + "px",
+    });
+    sessionStorage.removeItem("scrollPosition");
+  }
 }
 
 let fadeAnimationArray = [];

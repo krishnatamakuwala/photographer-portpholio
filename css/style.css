@@ -1412,8 +1412,8 @@ form {
 #submit {
   background: transparent;
   outline: none;
-  border: 1px solid rgb(0, 0, 0);
-  color: black;
+  border: 1px solid var(--primary-action-color);
+  color: var(--primary-action-color);
   padding: 10px 30px;
   font-size: 18px;
   margin: 20px;
@@ -1427,12 +1427,11 @@ form {
 #submit > img {
   margin-left: 10px;
   height: 25px;
-  filter: invert(0%) sepia(99%) saturate(3%) hue-rotate(279deg) brightness(94%)
-    contrast(101%);
+  filter: invert(67%) sepia(6%) saturate(1099%) hue-rotate(135deg) brightness(97%) contrast(86%);
 }
 #submit:after {
   content: "";
-  background: rgb(0, 0, 0);
+  background: var(--primary-action-color);
   color: white;
   left: 0;
   top: 100%;
