@@ -126,7 +126,7 @@ function resetCoverHeight() {
 }
 
 function modifyImageUrl(url) {
-  let imageOptions = "f_auto,q_auto";
+  let imageOptions = "f_auto,q_auto,w_400";
   let urlParts = url.split("/");
 
   // Insert the data at the appropriate position
