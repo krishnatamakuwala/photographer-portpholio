@@ -1427,7 +1427,8 @@ form {
 #submit > img {
   margin-left: 10px;
   height: 25px;
-  filter: invert(67%) sepia(6%) saturate(1099%) hue-rotate(135deg) brightness(97%) contrast(86%);
+  filter: invert(67%) sepia(6%) saturate(1099%) hue-rotate(135deg)
+    brightness(97%) contrast(86%);
 }
 #submit:after {
   content: "";
