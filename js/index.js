@@ -579,13 +579,9 @@ window.onscroll = function () {
 function onSubmitContactUsForm() {
   let isNameValid = false,
     isContactNumberValid = false,
-    isEmailValid = false,
-    isSubjectValid = false,
     isMessageValid = false;
   let name = $("#name");
   let contactnumber = $("#contactnumber");
-  let email = $("#email");
-  let subject = $("#subject");
   let message = $("#message");
 
   if (
@@ -620,38 +616,6 @@ function onSubmitContactUsForm() {
   }
 
   if (
-    email.val() === "" ||
-    email.val() === undefined ||
-    !/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(
-      email.val()
-    )
-  ) {
-    $("#err-" + email.attr("id")).html("Invalid email!");
-    $("#err-" + email.attr("id")).removeClass("hide");
-    $("#" + email.attr("id")).addClass("error-input");
-  } else {
-    $("#err-" + email.attr("id")).html("");
-    $("#err-" + email.attr("id")).addClass("hide");
-    $("#" + email.attr("id")).removeClass("error-input");
-    isEmailValid = true;
-  }
-
-  if (
-    /<\/?[a-z][\s\S]*>/i.test(subject.val()) ||
-    subject.val() === "" ||
-    subject.val() === undefined
-  ) {
-    $("#err-" + subject.attr("id")).html("Invalid subject!");
-    $("#err-" + subject.attr("id")).removeClass("hide");
-    $("#" + subject.attr("id")).addClass("error-input");
-  } else {
-    $("#err-" + subject.attr("id")).html("");
-    $("#err-" + subject.attr("id")).addClass("hide");
-    $("#" + subject.attr("id")).removeClass("error-input");
-    isSubjectValid = true;
-  }
-
-  if (
     /<\/?[a-z][\s\S]*>/i.test(message.val()) ||
     message.val() === "" ||
     message.val() === undefined
@@ -675,8 +639,6 @@ function onSubmitContactUsForm() {
   if (
     isNameValid &&
     isContactNumberValid &&
-    isEmailValid &&
-    isSubjectValid &&
     isMessageValid
   ) {
     let whatsAppMessage = `Hello,\r\nMy name is ${name.val()}. I want to enquire about ${subject.val()}.\r\n${message.val()}.\r\nYou can contact me on my email address ${email.val()} or contact number ${contactnumber.val()}.`;
