@@ -20,7 +20,7 @@ $(document).ready(function () {
     let title = document.title.split(" - ")[1];
 
     const res = await fetch(
-      "https://anilchauhanphotography-imageservice.onrender.com/api/images/?folderName=" +
+      "https://anilchauhanphotography-imageservice-lcyx.onrender.com/api/images/?folderName=" +
         title,
       {
         method: "GET",
